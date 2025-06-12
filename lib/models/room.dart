@@ -3,8 +3,8 @@ import 'package:adventure_game_version_1/models/game_object.dart';
 class Room {
   final String _name;
   final String _description;
-  late List<GameObject> _objects;
-  late Map<String, Room> _exits;
+  final List<GameObject> _objects = [];
+  final Map<String, Room> _exits = {};
 
   Room(this._name, this._description);
 
@@ -58,5 +58,9 @@ class Room {
 
   Room? getExit(String direction) {
     return _exits[direction];
+  }
+
+  factory Room.fromJson(Map<String, dynamic> json) {
+    return Room(json['name'], json['description']);
   }
 }

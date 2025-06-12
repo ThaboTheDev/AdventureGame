@@ -1,9 +1,9 @@
 import 'package:adventure_game_version_1/models/game_object.dart';
 
 class Weapon extends GameObject {
-  bool inTakeable;
+  final bool isTakeable;
 
-  Weapon(super.name, super.description, this.inTakeable);
+  Weapon(super.name, super.description, this.isTakeable);
 
   @override
   void interact() {
@@ -12,5 +12,13 @@ class Weapon extends GameObject {
 Name: $getName
 Description: $getDescription
 """);
+  }
+
+  bool getIsTakeable() {
+    return isTakeable;
+  }
+
+  factory Weapon.fromJson(Map<String, dynamic> json) {
+    return Weapon(json["name"], json['description'], json['isTakeable']);
   }
 }
