@@ -1,0 +1,142 @@
+{
+  "weapons": [
+    {
+      "name": "Sword of Dawn",
+      "description": "A glowing sword said to cut through shadows.",
+      "isTakeable": true
+    },
+    {
+      "name": "Axe of Doom",
+      "description": "Heavy and brutal, forged in dragon fire.",
+      "isTakeable": true
+    },
+    {
+      "name": "Bow of Shadows",
+      "description": "Fires silent arrows that strike without warning.",
+      "isTakeable": true
+    },
+    {
+      "name": "Spear of the Ancients",
+      "description": "Carved with runes, it hums with old power.",
+      "isTakeable": false
+    },
+    {
+      "name": "Dagger of Whispers",
+      "description": "Said to whisper the secrets of those it kills.",
+      "isTakeable": true
+    },
+    {
+      "name": "Hammer of Titans",
+      "description": "Can crush stone walls with a single blow.",
+      "isTakeable": true
+    },
+    {
+      "name": "Wand of Illusions",
+      "description": "Creates phantom doubles of the user.",
+      "isTakeable": true
+    },
+    {
+      "name": "Flame Whip",
+      "description": "A fiery weapon that leaves scorched trails.",
+      "isTakeable": true
+    },
+    {
+      "name": "Icicle Pike",
+      "description": "Pierces through armor and freezes wounds.",
+      "isTakeable": true
+    },
+    {
+      "name": "Crystal Mace",
+      "description": "Glows when near enemies, resonates on impact.",
+      "isTakeable": true
+    }
+  ],
+  "rooms": [
+    {
+      "name": "Throne Room",
+      "description": "A majestic room with a golden throne."
+    },
+    {
+      "name": "Armory",
+      "description": "Rusty weapons and armor hang from the walls."
+    },
+    {
+      "name": "Library",
+      "description": "Ancient books are scattered everywhere."
+    },
+    {
+      "name": "Dungeon",
+      "description": "Dark and damp, echoes of prisoners long gone."
+    },
+    {
+      "name": "Garden",
+      "description": "Overgrown with strange glowing plants."
+    },
+    {
+      "name": "Observatory",
+      "description": "A massive telescope points at the heavens."
+    },
+    {
+      "name": "Chapel",
+      "description": "Filled with cracked stained glass and eerie silence."
+    },
+    {
+      "name": "Vault",
+      "description": "Sealed by magic, contains forgotten treasures."
+    },
+    {
+      "name": "Barracks",
+      "description": "Dusty cots and long-forgotten armor lie here."
+    },
+    {
+      "name": "Hall of Mirrors",
+      "description": "Distorted reflections surround you."
+    },
+    {
+      "name": "Alchemist’s Lab",
+      "description": "Bubbling flasks and glowing powders everywhere."
+    }
+  ],
+  "items": [
+    {
+      "name": "Golden Key",
+      "description": "Shiny and valuable, may open something important.",
+      "isTakeable": true
+    },
+    {
+      "name": "Ancient Coin",
+      "description": "Stamped with a forgotten king's face.",
+      "isTakeable": true
+    },
+    {
+      "name": "Magic Mushroom",
+      "description": "Glows faintly in the dark, smells odd.",
+      "isTakeable": false
+    },
+    {
+      "name": "Rusty Gear",
+      "description": "Part of some old machine.",
+      "isTakeable": true
+    },
+    {
+      "name": "Glass Bottle",
+      "description": "Empty, but smells of potions.",
+      "isTakeable": true
+    },
+    {
+      "name": "Mysterious Statue",
+      "description": "Eyes seem to follow you.",
+      "isTakeable": false
+    },
+    {
+      "name": "Broken Mirror",
+      "description": "Cracked but still shows a reflection.",
+      "isTakeable": false
+    },
+    {
+      "name": "Ancient Scroll",
+      "description": "Written in a language you can’t read.",
+      "isTakeable": true
+    }
+  ]
+}

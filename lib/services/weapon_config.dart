@@ -1,0 +1,3 @@
+void weapoConfig(final data) {
+  
+}
