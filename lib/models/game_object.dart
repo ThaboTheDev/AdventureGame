@@ -8,4 +8,10 @@ abstract class GameObject {
   String get getDescription => _description;
 
   void interact();
+
+  void printSrtring() {
+    print("""
+Name: $getName
+""");
+  }
 }

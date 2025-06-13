@@ -16,8 +16,7 @@ class Room {
     if (_objects.isNotEmpty) {
       print("===== Items =====");
       for (GameObject object in _objects) {
-        object.interact();
-        print("");
+        object.printSrtring();
       }
     } else {
       print("There are no items in this room.");

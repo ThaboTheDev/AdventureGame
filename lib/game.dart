@@ -27,10 +27,10 @@ class Game {
     Random random = Random();
     Room startRoom = rooms[random.nextInt(rooms.length)];
 
-    ItemConfig itemConfig = ItemConfig(items, startRoom, 3);
+    ItemConfig itemConfig = ItemConfig(items, startRoom, 5);
     startRoom = itemConfig.addItemsToRoom();
 
-    WeaponConfig weaponConfig = WeaponConfig(weapons, startRoom, 2);
+    WeaponConfig weaponConfig = WeaponConfig(weapons, startRoom, 3);
     startRoom = weaponConfig.addWeaponToRoom();
 
     return startRoom;
