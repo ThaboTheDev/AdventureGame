@@ -9,6 +9,14 @@ class Command {
     final move = values[0];
     final value = values.skip(1).join(" ");
     switch (move) {
+      case "look":
+        player.look();
+        break;
+        
+      case "inventory":
+        player.showInventory();
+        break;
+
       case "move":
         player.move(value);
         break;
@@ -26,7 +34,12 @@ class Command {
         break;
 
       default:
-        print(PrintColorCode().colorize("Please anter a valid command.", PrintColorCode.red));
+        print(
+          PrintColorCode().colorize(
+            "Please anter a valid command.",
+            PrintColorCode.red,
+          ),
+        );
     }
   }
 
@@ -34,29 +47,51 @@ class Command {
     String? input;
     bool flag = true;
     do {
-      print(PrintColorCode().colorize("Are you sure you wanna leave (y/n) ?",PrintColorCode.green));
+      print(
+        PrintColorCode().colorize(
+          "Are you sure you wanna leave (y/n) ?",
+          PrintColorCode.green,
+        ),
+      );
       input = stdin.readLineSync()?.toLowerCase();
 
       List<String> valid = ["y", "n"];
 
       if (input != null) {
         if (!valid.contains(input)) {
-          print(PrintColorCode().colorize("Invalid input please enter (y/n)", PrintColorCode.red));
+          print(
+            PrintColorCode().colorize(
+              "Invalid input please enter (y/n)",
+              PrintColorCode.red,
+            ),
+          );
         } else {
           flag = false;
         }
       } else {
-        print(PrintColorCode().colorize("input can't be null", PrintColorCode.red));
+        print(
+          PrintColorCode().colorize("input can't be null", PrintColorCode.red),
+        );
       }
     } while (flag);
 
     switch (input) {
       case "y":
-        print(PrintColorCode().colorize("Thank you for playing.", PrintColorCode.green));
+        print(
+          PrintColorCode().colorize(
+            "Thank you for playing.",
+            PrintColorCode.green,
+          ),
+        );
         exit(1);
 
       default:
-        print(PrintColorCode().colorize("You will not the removed.", PrintColorCode.green));
+        print(
+          PrintColorCode().colorize(
+            "You will not the removed.",
+            PrintColorCode.green,
+          ),
+        );
     }
   }
 }

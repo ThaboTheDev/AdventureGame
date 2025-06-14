@@ -11,6 +11,11 @@ class Player {
 
   String get getName => _name;
 
+  void look() {
+    print("");
+    _currentRoom.describeRoom();
+  }
+
   void move(String direction) {
     Room? newRoom = _currentRoom.getExit(direction);
 
@@ -18,7 +23,12 @@ class Player {
       _currentRoom = newRoom;
       _currentRoom.describeRoom();
     } else {
-      print(PrintColorCode().colorize("There is no exit in the $direction direction", PrintColorCode.red));
+      print(
+        PrintColorCode().colorize(
+          "There is no exit in the $direction direction",
+          PrintColorCode.red,
+        ),
+      );
     }
   }
 
@@ -28,9 +38,19 @@ class Player {
     if (newItem != null) {
       _inventory.add(newItem);
       _currentRoom.removeItem(newItem);
-      print(PrintColorCode().colorize("You took the $itemName.", PrintColorCode.green));
+      print(
+        PrintColorCode().colorize(
+          "You took the $itemName.",
+          PrintColorCode.green,
+        ),
+      );
     } else {
-      print(PrintColorCode().colorize("The item $itemName is not in the room.", PrintColorCode.red));
+      print(
+        PrintColorCode().colorize(
+          "The item $itemName is not in the room.",
+          PrintColorCode.red,
+        ),
+      );
     }
   }
 
@@ -41,20 +61,32 @@ class Player {
     if (newObject != null) {
       newObject.interact();
     } else {
-      print(PrintColorCode().colorize("The object $objectName is not in the room.", PrintColorCode.red));
+      print(
+        PrintColorCode().colorize(
+          "The object $objectName is not in the room.",
+          PrintColorCode.red,
+        ),
+      );
     }
   }
 
   void showInventory() {
     print("");
-    print(PrintColorCode().colorize("====== inventory ======", PrintColorCode.cyan));
+    print(
+      PrintColorCode().colorize("====== inventory ======", PrintColorCode.cyan),
+    );
     print("");
     if (_inventory.isNotEmpty) {
       for (GameObject object in _inventory) {
         object.interact();
       }
     } else {
-      print(PrintColorCode().colorize("Your inventory is empty.", PrintColorCode.red));
+      print(
+        PrintColorCode().colorize(
+          "Your inventory is empty.",
+          PrintColorCode.red,
+        ),
+      );
     }
   }
 

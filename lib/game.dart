@@ -75,8 +75,8 @@ Without holding you further, let's start the game and GodSpeed adventurer.
     Player player = Player(playerName!);
     player.setStartRoom(startRoom);
     String? playerInput;
+    startRoom.describeRoom();
     while (true) {
-      startRoom.describeRoom();
       print(
         PrintColorCode().colorize(
           "What would you like to do: ",
