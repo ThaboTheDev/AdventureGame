@@ -1,21 +1,24 @@
 import 'dart:io';
 
 import 'package:adventure_game_version_1/player.dart';
+import 'package:adventure_game_version_1/services/print_color_code.dart';
 
 class Command {
   void chech(String command, Player player) {
-    final move = command.toLowerCase().split(' ');
-    switch (move[0]) {
+    final values = command.toLowerCase().split(' ');
+    final move = values[0];
+    final value = values.skip(1).join(" ");
+    switch (move) {
       case "move":
-        player.move(move[1]);
+        player.move(value);
         break;
 
       case "interact":
-        player.interactWith(move[1]);
+        player.interactWith(value);
         break;
 
       case "take":
-        player.takeItem(move[1]);
+        player.takeItem(value);
         break;
 
       case "quit":
@@ -23,7 +26,7 @@ class Command {
         break;
 
       default:
-        print("Please anter a valid command.");
+        print(PrintColorCode().colorize("Please anter a valid command.", PrintColorCode.red));
     }
   }
 
@@ -31,29 +34,29 @@ class Command {
     String? input;
     bool flag = true;
     do {
-      print("Are you sure you wanna leave (y/n) ?");
+      print(PrintColorCode().colorize("Are you sure you wanna leave (y/n) ?",PrintColorCode.green));
       input = stdin.readLineSync()?.toLowerCase();
 
       List<String> valid = ["y", "n"];
 
       if (input != null) {
         if (!valid.contains(input)) {
-          print("Invalid input please enter (y/n)");
+          print(PrintColorCode().colorize("Invalid input please enter (y/n)", PrintColorCode.red));
         } else {
           flag = false;
         }
       } else {
-        print("input can't be null");
+        print(PrintColorCode().colorize("input can't be null", PrintColorCode.red));
       }
     } while (flag);
 
     switch (input) {
       case "y":
-        print("Thank you for playing.");
+        print(PrintColorCode().colorize("Thank you for playing.", PrintColorCode.green));
         exit(1);
 
       default:
-        print("You will not the removed.");
+        print(PrintColorCode().colorize("You will not the removed.", PrintColorCode.green));
     }
   }
 }

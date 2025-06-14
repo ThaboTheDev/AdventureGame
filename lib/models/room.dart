@@ -1,4 +1,5 @@
 import 'package:adventure_game_version_1/models/game_object.dart';
+import 'package:adventure_game_version_1/services/print_color_code.dart';
 
 class Room {
   final String _name;
@@ -9,26 +10,26 @@ class Room {
   Room(this._name, this._description);
 
   void describeRoom() {
-    print("====== $_name ======");
-    print(_description);
+    print(PrintColorCode().colorize("====== $_name ======", PrintColorCode.cyan));
+    print(PrintColorCode().colorize(_description, PrintColorCode.blue));
     print("");
 
     if (_objects.isNotEmpty) {
-      print("===== Items =====");
+      print(PrintColorCode().colorize("===== Items =====", PrintColorCode.cyan));
       for (GameObject object in _objects) {
         object.printSrtring();
       }
     } else {
-      print("There are no items in this room.");
+      print(PrintColorCode().colorize("There are no items in this room.", PrintColorCode.red));
     }
 
     if (_exits.isNotEmpty) {
-      print("====== Exits ======");
+      print(PrintColorCode().colorize("====== Exits ======", PrintColorCode.cyan));
       for (String direction in _exits.keys) {
         print("-- $direction");
       }
     } else {
-      print("You are trapped, there are no exits.");
+      print(PrintColorCode().colorize("You are trapped, there are no exits.", PrintColorCode.red));
     }
   }
 
@@ -38,7 +39,7 @@ class Room {
 
   GameObject? getItem(String itemName) {
     for (GameObject obj in _objects) {
-      if (obj.getName == itemName) {
+      if (obj.getName.toLowerCase() == itemName.toLowerCase()) {
         return obj;
       }
     }
@@ -50,13 +51,13 @@ class Room {
   }
 
   void addExit(String direction, Room room) {
-    if (!_exits.containsKey(direction)) {
+    if (!_exits.containsKey(direction.toLowerCase())) {
       _exits[direction] = room;
     }
   }
 
   Room? getExit(String direction) {
-    return _exits[direction];
+    return _exits[direction.toLowerCase()];
   }
 
   factory Room.fromJson(Map<String, dynamic> json) {

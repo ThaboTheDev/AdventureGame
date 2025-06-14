@@ -1,4 +1,5 @@
 import 'package:adventure_game_version_1/models/game_object.dart';
+import 'package:adventure_game_version_1/services/print_color_code.dart';
 
 class Item extends GameObject {
   final bool isTakeable;
@@ -7,12 +8,12 @@ class Item extends GameObject {
 
   @override
   void interact() {
-    print("""
+    print(PrintColorCode().colorize("""
 ====== Item Info ======
 Name: $getName
 Description: $getDescription
 IsTakeable: $isTakeable
-""");
+""", PrintColorCode.green));
   }
 
   bool getIsTakeable() {

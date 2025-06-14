@@ -1,3 +1,5 @@
+import 'package:adventure_game_version_1/services/print_color_code.dart';
+
 abstract class GameObject {
   final String _name;
   final String _description;
@@ -10,8 +12,8 @@ abstract class GameObject {
   void interact();
 
   void printSrtring() {
-    print("""
+    print(PrintColorCode().colorize("""
 Name: $getName
-""");
+""", PrintColorCode.blue));
   }
 }
