@@ -1,44 +1,14 @@
 import 'dart:io';
-import 'dart:math';
 
-import 'package:adventure_game_version_1/models/item.dart';
 import 'package:adventure_game_version_1/models/room.dart';
-import 'package:adventure_game_version_1/models/weapon.dart';
 import 'package:adventure_game_version_1/player.dart';
 import 'package:adventure_game_version_1/services/command.dart';
-import 'package:adventure_game_version_1/services/item_config.dart';
-import 'package:adventure_game_version_1/services/load_wrld_data.dart';
 import 'package:adventure_game_version_1/services/print_color_code.dart';
-import 'package:adventure_game_version_1/services/weapon_config.dart';
+import 'package:adventure_game_version_1/services/room_config.dart';
 
 class Game {
-  Future<Room> configWorld() async {
-    final data = await loadWorldData();
-
-    final itemsJson = data['items'] as List;
-    final weaponJson = data['weapons'] as List;
-    final roomJson = data['rooms'] as List;
-
-    List<Item> items = itemsJson.map((item) => Item.fromJson(item)).toList();
-    List<Weapon> weapons = weaponJson
-        .map((weapon) => Weapon.fromJson(weapon))
-        .toList();
-    List<Room> rooms = roomJson.map((room) => Room.fromJson(room)).toList();
-
-    Random random = Random();
-    Room startRoom = rooms[random.nextInt(rooms.length)];
-
-    ItemConfig itemConfig = ItemConfig(items, startRoom, 5);
-    startRoom = itemConfig.addItemsToRoom();
-
-    WeaponConfig weaponConfig = WeaponConfig(weapons, startRoom, 3);
-    startRoom = weaponConfig.addWeaponToRoom();
-
-    return startRoom;
-  }
-
   Future<void> start() async {
-    Room startRoom = await configWorld();
+    Room startRoom = await RoomConfig().generateLinearRoomPath();
     print(
       PrintColorCode().colorize("""
 GoodDay, Welcome to my mystery rooms.
