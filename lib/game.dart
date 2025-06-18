@@ -6,17 +6,24 @@ import 'package:adventure_game_version_1/services/command.dart';
 import 'package:adventure_game_version_1/services/print_color_code.dart';
 import 'package:adventure_game_version_1/services/room_config.dart';
 
+///creates the game thats gonna be played.
 class Game {
+
+  ///the function that controls all activity and allows for user input.
   Future<void> start() async {
+    ///calls the main world of the game.
     Room startRoom = await RoomConfig().generateLinearRoomPath();
+
+    ///displays the main rules of the game.
     print(
       PrintColorCode().colorize("""
 GoodDay, Welcome to my mystery rooms.
 The rules are simple:
     1. You can move around with the command e.g(move north).
-    2. You can pick items in the room with e.g(pickup sword).
-    3. You can interact with items using e.g(interact sword).
+    2. You can pick items in the room with e.g(take sword).
+    3. You can interact with items using e.g(interact spear of the ancients).
     4. You can see your inventory with the command e.g (inventory).
+    5. You can see the room with the command e.g (look).
     
 Without holding you further, let's start the game and GodSpeed adventurer.
                 """, PrintColorCode.blue),
@@ -30,6 +37,7 @@ Without holding you further, let's start the game and GodSpeed adventurer.
 
     bool flag = true;
     String? playerName;
+    ///validates if a name has been added or not.
     do {
       playerName = stdin.readLineSync();
       if (playerName != null) {
@@ -42,10 +50,15 @@ Without holding you further, let's start the game and GodSpeed adventurer.
       print("");
     } while (flag);
 
+    ///creates a new player.
     Player player = Player(playerName!);
+    ///sets the wolrd for the player.
     player.setStartRoom(startRoom);
     String? playerInput;
+    ///gives the description of the starting room.
     startRoom.describeRoom();
+
+    ///the main loop of the game that runs until stopped by a command.
     while (true) {
       print(
         PrintColorCode().colorize(

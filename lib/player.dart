@@ -36,14 +36,23 @@ class Player {
     print("");
     GameObject? newItem = _currentRoom.getItem(itemName);
     if (newItem != null) {
-      _inventory.add(newItem);
-      _currentRoom.removeItem(newItem);
-      print(
-        PrintColorCode().colorize(
-          "You took the $itemName.",
-          PrintColorCode.green,
-        ),
-      );
+      if (newItem.getIsTakeable) {
+        _inventory.add(newItem);
+        _currentRoom.removeItem(newItem);
+        print(
+          PrintColorCode().colorize(
+            "You took the $itemName.",
+            PrintColorCode.green,
+          ),
+        );
+      } else {
+        print(
+          PrintColorCode().colorize(
+            "This item cannot be taken",
+            PrintColorCode.red,
+          ),
+        );
+      }
     } else {
       print(
         PrintColorCode().colorize(

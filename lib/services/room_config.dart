@@ -1,5 +1,3 @@
-import 'dart:math';
-
 import 'package:adventure_game_version_1/models/item.dart';
 import 'package:adventure_game_version_1/models/room.dart';
 import 'package:adventure_game_version_1/models/weapon.dart';
@@ -7,32 +5,15 @@ import 'package:adventure_game_version_1/services/item_config.dart';
 import 'package:adventure_game_version_1/services/load_wrld_data.dart';
 import 'package:adventure_game_version_1/services/weapon_config.dart';
 
+///Creates the world from the world data.
+///
+///uses the given data to generate rooms and populate those rooms with weapons
+///and items that players can interact with.
 class RoomConfig {
-  // Future<Room> configWorld() async {
-  //   final data = await loadWorldData();
 
-  //   final itemsJson = data['items'] as List;
-  //   final weaponJson = data['weapons'] as List;
-  //   final roomJson = data['rooms'] as List;
-
-  //   List<Item> items = itemsJson.map((item) => Item.fromJson(item)).toList();
-  //   List<Weapon> weapons = weaponJson
-  //       .map((weapon) => Weapon.fromJson(weapon))
-  //       .toList();
-  //   List<Room> rooms = roomJson.map((room) => Room.fromJson(room)).toList();
-
-  //   Random random = Random();
-  //   Room startRoom = rooms[random.nextInt(rooms.length)];
-
-  //   ItemConfig itemConfig = ItemConfig(items, startRoom, 5);
-  //   startRoom = itemConfig.addItemsToRoom();
-
-  //   WeaponConfig weaponConfig = WeaponConfig(weapons, startRoom, 3);
-  //   startRoom = weaponConfig.addWeaponToRoom();
-
-  //   return startRoom;
-  // }
-
+  ///creates connected rooms which are the world.
+  ///
+  ///reutrns the starting room that the player starts in.
   Future<Room> generateLinearRoomPath() async {
     //Load the world data from a json file.
     final data = await loadWorldData();
@@ -58,19 +39,22 @@ class RoomConfig {
     final directions = ['north', 'east', 'south', 'west'];
     int dirIndex = 0;
 
+    //pick rooms for the list of rooms and connects them together.
     for (int i = 0; i < rooms.length - 1; i++) {
       Room current = rooms[i];
       Room next = rooms[i + 1];
       String direction = directions[dirIndex % directions.length];
       current.addExit(direction, next);
 
+      // adds items to the room chosen.
       ItemConfig itemConfig = ItemConfig(items, current, 5);
       current = itemConfig.addItemsToRoom();
 
+      //adds weapons to the room chosen
       WeaponConfig weaponConfig = WeaponConfig(weapons, current, 3);
       current = weaponConfig.addWeaponToRoom();
 
-      // Optional: make bi-directional
+      //crated a bi-directional exit.
       String opposite = getOppositeDirection(direction);
       next.addExit(opposite, current);
 
@@ -80,7 +64,7 @@ class RoomConfig {
     return rooms.first; // Return the starting room
   }
 
-  //opposite direcrions for bi-directinal movement.
+  ///opposite direcrions for bi-directinal movement.
   String getOppositeDirection(String dir) {
     switch (dir) {
       case 'north':

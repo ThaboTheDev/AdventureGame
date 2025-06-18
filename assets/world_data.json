@@ -18,7 +18,7 @@
     {
       "name": "Spear of the Ancients",
       "description": "Carved with runes, it hums with old power.",
-      "isTakeable": false
+      "isTakeable": true
     },
     {
       "name": "Dagger of Whispers",
