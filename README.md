@@ -1,96 +1,109 @@
-# Adventure Game Engine – Dart OOP Project
+# 🎩 Dart Adventure Game Engine
 
-This is a **terminal-based adventure game engine** built in Dart, applying Object-Oriented Programming principles to create an interactive text adventure experience. Players explore rooms, collect items, and interact with the game world using typed commands.
-
----
-
-## 🧩 Overview
-
-The game consists of interconnected rooms, items, and interactable objects. The engine is designed with clean Dart OOP structure using abstract classes, inheritance, and composition.
+A terminal-based adventure game written in Dart. Players can explore interconnected rooms, collect items and weapons, and interact with the world through typed commands.
 
 ---
 
-## 📦 Project Structure
+## 🚀 Version 2 Highlights
 
-### Core Classes
+### ✅ Core Features
 
-#### `GameObject` (abstract class)
-Represents any interactive object in the game world.
+* Dynamic room generation with connections
+* Terminal-based command interface
+* Player movement across rooms
+* Item and weapon discovery
+* Color-coded terminal output for better UX
+* Help and command suggestion system
 
-- **Fields:**
-  - `String name`
-  - `String description`
+### 💡 Gameplay Enhancements
 
-- **Methods:**
-  - `String getName()`
-  - `String getDescription()`
-  - `void interact()` (abstract)
-
----
-
-#### `Item` (extends `GameObject`)
-A specific type of object that the player can inspect or pick up.
-
-- **Field:**
-  - `bool isTakeable`
-
-- **Method:**
-  - Overrides `interact()` to describe or collect the item if takeable.
+* **Combat System**: Enemies appear in some rooms; players can attack, defend, or flee.
+* **Health System**: Both enemies and the player have health points. Game over triggers on 0 HP.
+* **Inventory Use**: Use healing items or keys for special interactions.
+* **Puzzle/Lock Mechanics**: Some rooms require specific items to enter.
+* **Save/Load**: Optional system to save player state and world to file.
 
 ---
 
-#### `Room`
-Defines a location the player can explore.
+## 🧠 How it Works
 
-- **Fields:**
-  - `String name`
-  - `String description`
-  - `List<GameObject> objects`
-  - `Map<String, Room> exits` (e.g., `"north": someRoom`)
+The game loads `world_data.json`, which defines:
 
-- **Methods:**
-  - `void describeRoom()`
-  - `void addObject(GameObject obj)`
-  - `void addExit(String direction, Room room)`
-  - `Room? getExit(String direction)`
+* Weapons
+* Items
+* Rooms
+
+It creates a map with linked rooms, randomly distributes items and weapons, and starts the player in a random room.
+
+Commands like `move north`, `look`, `take [item]`, and `inventory` allow players to interact with the world.
 
 ---
 
-#### `Player`
-Represents the current player’s state and inventory.
+## 🧱 Main Classes
 
-- **Fields:**
-  - `Room currentRoom`
-  - `List<Item> inventory`
+### `GameObject` (Abstract)
 
-- **Methods:**
-  - `void move(String direction)`
-  - `void takeItem(String itemName)`
-  - `void interactWith(String objectName)`
-  - `void showInventory()`
+```dart
+String name;
+String description;
+void interact();
+```
+
+### `Item` / `Weapon`
+
+Extends `GameObject`.
+
+* Adds `bool isTakeable`
+* Weapon includes damage values
+
+### `Room`
+
+Contains description, list of objects, and room exits.
+
+### `Player`
+
+Tracks current room, inventory, and health.
+
+### `Game`
+
+Runs the main loop, handles input/output, and game logic.
+
+### `Enemy` *(NEW)*
+
+* Fields: `name`, `health`, `damage`
+* Behaves like a hostile `GameObject`
 
 ---
 
-#### `Game`
-Controls the game loop and world setup.
+## 🧪 Commands Supported
 
-- Sets up rooms, items, and objects
-- Handles user input and command processing
-- Runs the game loop
-
----
-
-## 💡 Optional Features
-
-- Add NPCs or enemies (also extending `GameObject`)
-- Create puzzles requiring certain items to solve
-- Add a point or scoring system
-- Implement save/load functionality
+* `move [direction]`
+* `look`
+* `take [item]`
+* `inventory`
+* `use [item]`
+* `attack`
+* `help`
+* *(Planned)* `save`, `load`
 
 ---
 
-## ✅ Implementation Goals
+## 🛠️ Setup & Run
 
-- [ ] Create `GameObject`, `Item`, `Room`, `Player`, and `Game`
-- [ ] Use at least one abstract class
-- [ ] Demonstrate inheritance and polymorp
+```bash
+git clone https://github.com/ThaboTheDev/AdventureGame.git
+cd adventure_game_version_1
+dart pub get
+dart run bin/main.dart
+```
+
+---
+
+## 🗜️ Next Steps
+
+* [ ] Add save/load system
+* [ ] Introduce puzzles or locked areas
+* [ ] Enemy variety and difficulty scaling
+* [ ] Random events (traps, treasures)
+
+Enjoy the journey and stay tuned for more updates! ✨
