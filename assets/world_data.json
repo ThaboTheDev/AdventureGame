@@ -138,5 +138,112 @@
       "description": "Written in a language you can’t read.",
       "isTakeable": true
     }
+  ],
+  "npcs": [
+    {
+      "type": "merchant",
+      "name": "Gilda the Trader",
+      "description": "A shrewd merchant always looking for a deal."
+    },
+    {
+      "type": "merchant",
+      "name": "Bram the Bargainer",
+      "description": "Carries odd trinkets from distant lands."
+    },
+    {
+      "type": "merchant",
+      "name": "Zelma of the East",
+      "description": "Sells potions and rare herbs."
+    },
+    {
+      "type": "questGiver",
+      "name": "Elandra the Wise",
+      "description": "A seer with visions of the future."
+    },
+    {
+      "type": "questGiver",
+      "name": "Captain Thorn",
+      "description": "Needs help finding his lost crew."
+    },
+    {
+      "type": "questGiver",
+      "name": "Elder Mira",
+      "description": "Wants you to restore balance to the forest."
+    },
+    {
+      "type": "enemy",
+      "name": "Gruk the Devourer",
+      "description": "A monstrous being of fire and smoke."
+    },
+    {
+      "type": "enemy",
+      "name": "Shade Assassin",
+      "description": "Strikes silently from the shadows."
+    },
+    {
+      "type": "enemy",
+      "name": "Bonecrusher",
+      "description": "A massive brute with a club of bones."
+    },
+    {
+      "type": "trickster",
+      "name": "Whispy Wink",
+      "description": "Likes confusing travelers with riddles."
+    },
+    {
+      "type": "trickster",
+      "name": "Jester Vale",
+      "description": "A wandering prankster with a silver tongue."
+    },
+    {
+      "type": "trickster",
+      "name": "Mira Mischief",
+      "description": "Appears friendly but hides a hidden agenda."
+    },
+    {
+      "type": "spirit",
+      "name": "Ethereal Watcher",
+      "description": "A glowing figure that stares into your soul."
+    },
+    {
+      "type": "spirit",
+      "name": "Whispering Wraith",
+      "description": "Murmurs secrets in the dark."
+    },
+    {
+      "type": "spirit",
+      "name": "Lost Soul",
+      "description": "Trapped between realms, searching for peace."
+    },
+    {
+      "type": "wanderer",
+      "name": "Nomad Jax",
+      "description": "Knows many paths through the wildlands."
+    },
+    {
+      "type": "wanderer",
+      "name": "Lina the Seeker",
+      "description": "Follows trails only she can see."
+    },
+    {
+      "type": "wanderer",
+      "name": "Tarn the Scout",
+      "description": "Has seen places no map knows."
+    },
+    {
+      "type": "guard",
+      "name": "Ironhelm",
+      "description": "Sworn to protect the castle gates."
+    },
+    {
+      "type": "guard",
+      "name": "Sentinel Kael",
+      "description": "Patrols the corridors in silence."
+    },
+    {
+      "type": "guard",
+      "name": "Seraphina Shield",
+      "description": "Wields a tower shield and unmatched resolve."
+    }
   ]
 }

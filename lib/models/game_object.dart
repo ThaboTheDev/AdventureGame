@@ -14,10 +14,6 @@ abstract class GameObject {
   void interact();
 
   void printSrtring() {
-    print(
-      PrintColorCode().colorize("""
-Name: $getName
-""", PrintColorCode.blue),
-    );
+    print(PrintColorCode().colorize("Name: $getName", PrintColorCode.blue));
   }
 }
