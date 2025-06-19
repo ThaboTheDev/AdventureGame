@@ -1,5 +1,6 @@
 import 'package:adventure_game_version_1/models/game_object.dart';
 import 'package:adventure_game_version_1/models/room.dart';
+import 'package:adventure_game_version_1/services/commands/command.dart';
 import 'package:adventure_game_version_1/services/print_color_code.dart';
 
 class Player {
@@ -10,6 +11,10 @@ class Player {
   Player(this._name);
 
   String get getName => _name;
+
+  bool handleCommand(Command command) {
+    return command.execute(this);
+  }
 
   void look() {
     print("");

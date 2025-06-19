@@ -1,47 +1,17 @@
 import 'dart:io';
 
 import 'package:adventure_game_version_1/player.dart';
+import 'package:adventure_game_version_1/services/commands/command.dart';
 import 'package:adventure_game_version_1/services/print_color_code.dart';
 
-class Command {
-  void chech(String command, Player player) {
-    final values = command.toLowerCase().split(' ');
-    final move = values[0];
-    final value = values.skip(1).join(" ");
-    switch (move) {
-      case "look":
-        player.look();
-        break;
-        
-      case "inventory":
-        player.showInventory();
-        break;
-
-      case "move":
-        player.move(value);
-        break;
-
-      case "interact":
-        player.interactWith(value);
-        break;
-
-      case "take":
-        player.takeItem(value);
-        break;
-
-      case "quit":
-        end();
-        break;
-
-      default:
-        print(
-          PrintColorCode().colorize(
-            "Please anter a valid command.",
-            PrintColorCode.red,
-          ),
-        );
-    }
+class QuitCommand extends Command {
+  @override
+  bool execute(Player target) {
+    end();
+    return true;
   }
+  
+  QuitCommand(super._name, super._argument);
 
   void end() {
     String? input;

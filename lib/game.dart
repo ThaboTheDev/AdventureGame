@@ -2,13 +2,13 @@ import 'dart:io';
 
 import 'package:adventure_game_version_1/models/room.dart';
 import 'package:adventure_game_version_1/player.dart';
-import 'package:adventure_game_version_1/services/command.dart';
+import 'package:adventure_game_version_1/services/commands/command.dart';
+import 'package:adventure_game_version_1/services/commands/command_factory.dart';
 import 'package:adventure_game_version_1/services/print_color_code.dart';
 import 'package:adventure_game_version_1/services/room_config.dart';
 
 ///creates the game thats gonna be played.
 class Game {
-
   ///the function that controls all activity and allows for user input.
   Future<void> start() async {
     ///calls the main world of the game.
@@ -37,6 +37,7 @@ Without holding you further, let's start the game and GodSpeed adventurer.
 
     bool flag = true;
     String? playerName;
+
     ///validates if a name has been added or not.
     do {
       playerName = stdin.readLineSync();
@@ -52,13 +53,16 @@ Without holding you further, let's start the game and GodSpeed adventurer.
 
     ///creates a new player.
     Player player = Player(playerName!);
+
     ///sets the wolrd for the player.
     player.setStartRoom(startRoom);
     String? playerInput;
+
     ///gives the description of the starting room.
     startRoom.describeRoom();
 
     ///the main loop of the game that runs until stopped by a command.
+    Command command;
     while (true) {
       print(
         PrintColorCode().colorize(
@@ -71,7 +75,8 @@ Without holding you further, let's start the game and GodSpeed adventurer.
 
       if (playerInput != null) {
         if (playerInput != " ") {
-          Command().chech(playerInput, player);
+          command = CommandFactory().create(playerInput);
+          player.handleCommand(command);
           print("");
         } else {
           print(
