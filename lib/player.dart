@@ -1,3 +1,4 @@
+import 'package:adventure_game_version_1/models/characters/non_player_characters.dart';
 import 'package:adventure_game_version_1/models/game_object.dart';
 import 'package:adventure_game_version_1/models/room.dart';
 import 'package:adventure_game_version_1/services/commands/command.dart';
@@ -71,9 +72,12 @@ class Player {
   void interactWith(String objectName) {
     print("");
     GameObject? newObject = _currentRoom.getItem(objectName);
+    NonPlayerCharacters? chr = _currentRoom.getNpc(objectName);
 
     if (newObject != null) {
       newObject.interact();
+    } else if (chr != null) {
+      chr.interact();
     } else {
       print(
         PrintColorCode().colorize(

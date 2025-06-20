@@ -118,6 +118,15 @@ class Room {
     _characters.remove(character);
   }
 
+  NonPlayerCharacters? getNpc(String name) {
+    for (NonPlayerCharacters chr in _characters) {
+      if (chr.name.toLowerCase() == name.toLowerCase()) {
+        return chr;
+      }
+    }
+    return null;
+  }
+
   ///generates a new [room] from the given world data for each room.
   factory Room.fromJson(Map<String, dynamic> json) {
     return Room(json['name'], json['description']);
