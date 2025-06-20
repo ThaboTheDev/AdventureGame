@@ -1,11 +1,11 @@
 import 'package:adventure_game_version_1/services/commands/command.dart';
+import 'package:adventure_game_version_1/services/commands/error_command.dart';
 import 'package:adventure_game_version_1/services/commands/interact_command.dart';
 import 'package:adventure_game_version_1/services/commands/inventory_command.dart';
 import 'package:adventure_game_version_1/services/commands/look_command.dart';
 import 'package:adventure_game_version_1/services/commands/move_command.dart';
 import 'package:adventure_game_version_1/services/commands/quit_command.dart';
 import 'package:adventure_game_version_1/services/commands/take_command.dart';
-import 'package:adventure_game_version_1/services/print_color_code.dart';
 
 class CommandFactory {
   Command create(String command) {
@@ -33,12 +33,7 @@ class CommandFactory {
         return QuitCommand(move, value);
 
       default:
-        throw Exception(
-          PrintColorCode().colorize(
-            "Please anter a valid command.",
-            PrintColorCode.red,
-          ),
-        );
+        return ErrorCommand("error", "Please enter valid command");
     }
   }
 }

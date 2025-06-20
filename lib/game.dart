@@ -40,8 +40,8 @@ Without holding you further, let's start the game and GodSpeed adventurer.
 
     ///validates if a name has been added or not.
     do {
-      playerName = stdin.readLineSync();
-      if (playerName != null) {
+      playerName = stdin.readLineSync()!.trim();
+      if (playerName != "") {
         flag = false;
       } else {
         print(
@@ -52,7 +52,7 @@ Without holding you further, let's start the game and GodSpeed adventurer.
     } while (flag);
 
     ///creates a new player.
-    Player player = Player(playerName!);
+    Player player = Player(playerName);
 
     ///sets the wolrd for the player.
     player.setStartRoom(startRoom);
