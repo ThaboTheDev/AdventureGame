@@ -93,7 +93,7 @@
       "description": "Distorted reflections surround you."
     },
     {
-      "name": "Alchemist’s Lab",
+      "name": "Alchemist\u2019s Lab",
       "description": "Bubbling flasks and glowing powders everywhere."
     }
   ],
@@ -135,7 +135,7 @@
     },
     {
       "name": "Ancient Scroll",
-      "description": "Written in a language you can’t read.",
+      "description": "Written in a language you can\u2019t read.",
       "isTakeable": true
     }
   ],
@@ -143,107 +143,212 @@
     {
       "type": "merchant",
       "name": "Gilda the Trader",
-      "description": "A shrewd merchant always looking for a deal."
+      "description": "A shrewd merchant always looking for a deal.",
+      "dialogue": [
+        "Looking to trade, adventurer?",
+        "Gold speaks louder than words.",
+        "I have just what you need… for a price."
+      ]
     },
     {
       "type": "merchant",
       "name": "Bram the Bargainer",
-      "description": "Carries odd trinkets from distant lands."
+      "description": "Carries odd trinkets from distant lands.",
+      "dialogue": [
+        "Only the rarest goods for the cleverest buyers.",
+        "Ever seen a dragon fang? No? Want one?",
+        "I can guarantee none of this is cursed… at least not too cursed."
+      ]
     },
     {
       "type": "merchant",
       "name": "Zelma of the East",
-      "description": "Sells potions and rare herbs."
+      "description": "Sells potions and rare herbs.",
+      "dialogue": [
+        "I have what heals and what harms.",
+        "Brewed this myself. Want to try?",
+        "Fresh batch—don’t ask what’s in it."
+      ]
     },
     {
       "type": "questGiver",
       "name": "Elandra the Wise",
-      "description": "A seer with visions of the future."
+      "description": "A seer with visions of the future.",
+      "dialogue": [
+        "I foresaw your coming.",
+        "The stars whisper of a hero—are you that one?",
+        "Your path is heavy with destiny."
+      ]
     },
     {
       "type": "questGiver",
       "name": "Captain Thorn",
-      "description": "Needs help finding his lost crew."
+      "description": "Needs help finding his lost crew.",
+      "dialogue": [
+        "My men are missing… I need your blade.",
+        "They were last seen near the ruins.",
+        "Don’t disappoint me."
+      ]
     },
     {
       "type": "questGiver",
       "name": "Elder Mira",
-      "description": "Wants you to restore balance to the forest."
+      "description": "Wants you to restore balance to the forest.",
+      "dialogue": [
+        "The forest is sick. You can help heal it.",
+        "Seek the root shrine and light the flame.",
+        "Time is slipping away."
+      ]
     },
     {
       "type": "enemy",
       "name": "Gruk the Devourer",
-      "description": "A monstrous being of fire and smoke."
+      "description": "A monstrous being of fire and smoke.",
+      "dialogue": [
+        "I will burn your world to ash!",
+        "Your courage will taste delicious.",
+        "Come, face your end!"
+      ]
     },
     {
       "type": "enemy",
       "name": "Shade Assassin",
-      "description": "Strikes silently from the shadows."
+      "description": "Strikes silently from the shadows.",
+      "dialogue": [
+        "You’ll never hear your end.",
+        "One cut is all it takes.",
+        "Silence is my ally."
+      ]
     },
     {
       "type": "enemy",
       "name": "Bonecrusher",
-      "description": "A massive brute with a club of bones."
+      "description": "A massive brute with a club of bones.",
+      "dialogue": [
+        "SMASH FIRST. QUESTIONS NEVER!",
+        "You look like you crunch good.",
+        "Throwing bones is my favorite pastime."
+      ]
     },
     {
       "type": "trickster",
       "name": "Whispy Wink",
-      "description": "Likes confusing travelers with riddles."
+      "description": "Likes confusing travelers with riddles.",
+      "dialogue": [
+        "Answer me this, if you dare!",
+        "Win the game, lose your mind.",
+        "Reality is just a suggestion."
+      ]
     },
     {
       "type": "trickster",
       "name": "Jester Vale",
-      "description": "A wandering prankster with a silver tongue."
+      "description": "A wandering prankster with a silver tongue.",
+      "dialogue": [
+        "Truth is a joke waiting to happen.",
+        "Flip a coin, lose your soul?",
+        "Laugh or cry—you choose."
+      ]
     },
     {
       "type": "trickster",
       "name": "Mira Mischief",
-      "description": "Appears friendly but hides a hidden agenda."
+      "description": "Appears friendly but hides a hidden agenda.",
+      "dialogue": [
+        "I’m your best friend. Or am I?",
+        "Trust is such a heavy thing to carry.",
+        "Don’t worry—unless you should."
+      ]
     },
     {
       "type": "spirit",
       "name": "Ethereal Watcher",
-      "description": "A glowing figure that stares into your soul."
+      "description": "A glowing figure that stares into your soul.",
+      "dialogue": [
+        "Time flows differently here.",
+        "You are being watched… always.",
+        "What you see is never all you are."
+      ]
     },
     {
       "type": "spirit",
       "name": "Whispering Wraith",
-      "description": "Murmurs secrets in the dark."
+      "description": "Murmurs secrets in the dark.",
+      "dialogue": [
+        "The veil is thin… listen closely.",
+        "They’re coming… they’re already here.",
+        "I hear things no ear should."
+      ]
     },
     {
       "type": "spirit",
       "name": "Lost Soul",
-      "description": "Trapped between realms, searching for peace."
+      "description": "Trapped between realms, searching for peace.",
+      "dialogue": [
+        "Have you seen the light?",
+        "I just want to go home…",
+        "Can you help me find my way?"
+      ]
     },
     {
       "type": "wanderer",
       "name": "Nomad Jax",
-      "description": "Knows many paths through the wildlands."
+      "description": "Knows many paths through the wildlands.",
+      "dialogue": [
+        "You lost? I’m not.",
+        "Maps are lies drawn by the afraid.",
+        "I’ve walked where the stars guide."
+      ]
     },
     {
       "type": "wanderer",
       "name": "Lina the Seeker",
-      "description": "Follows trails only she can see."
+      "description": "Follows trails only she can see.",
+      "dialogue": [
+        "The wind speaks. I listen.",
+        "There’s a trail in the stars.",
+        "Follow if you dare—be ready for anything."
+      ]
     },
     {
       "type": "wanderer",
       "name": "Tarn the Scout",
-      "description": "Has seen places no map knows."
+      "description": "Has seen places no map knows.",
+      "dialogue": [
+        "Danger lies ahead. Always.",
+        "Even silence has footsteps.",
+        "Stay alert. Even here."
+      ]
     },
     {
       "type": "guard",
       "name": "Ironhelm",
-      "description": "Sworn to protect the castle gates."
+      "description": "Sworn to protect the castle gates.",
+      "dialogue": [
+        "No one enters without the King's word.",
+        "I don't trust easily.",
+        "Move along—or move on."
+      ]
     },
     {
       "type": "guard",
       "name": "Sentinel Kael",
-      "description": "Patrols the corridors in silence."
+      "description": "Patrols the corridors in silence.",
+      "dialogue": [
+        "Quiet... something stirs.",
+        "Eyes open. Sword ready.",
+        "This hall demands respect."
+      ]
     },
     {
       "type": "guard",
       "name": "Seraphina Shield",
-      "description": "Wields a tower shield and unmatched resolve."
+      "description": "Wields a tower shield and unmatched resolve.",
+      "dialogue": [
+        "Justice stands firm.",
+        "My shield has never fallen.",
+        "I stand for those who cannot."
+      ]
     }
   ]
 }
