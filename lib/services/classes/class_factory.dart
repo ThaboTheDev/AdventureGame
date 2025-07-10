@@ -1,12 +1,12 @@
 import 'package:adventure_game_version_1/services/classes/assassin.dart';
-import 'package:adventure_game_version_1/services/classes/classes.dart';
 import 'package:adventure_game_version_1/services/classes/healer.dart';
 import 'package:adventure_game_version_1/services/classes/knight.dart';
 import 'package:adventure_game_version_1/services/classes/mage.dart';
+import 'package:adventure_game_version_1/services/classes/player.dart';
 import 'package:adventure_game_version_1/services/classes/tank.dart';
 import 'package:adventure_game_version_1/services/print_color_code.dart';
 
-Classes? getClass(String input, String name) {
+Player? getClass(String input, String name) {
   switch (input) {
     case "mage":
       return Mage(name, 20, 100, 20);

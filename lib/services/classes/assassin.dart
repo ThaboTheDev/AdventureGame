@@ -1,5 +1,5 @@
-import 'package:adventure_game_version_1/services/classes/classes.dart';
+import 'package:adventure_game_version_1/services/classes/player.dart';
 
-class Assassin extends Classes {
+class Assassin extends Player {
   Assassin(super.name, super.attack, super.health, super.defence);
 }

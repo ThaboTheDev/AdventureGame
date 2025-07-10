@@ -4,14 +4,20 @@ import 'package:adventure_game_version_1/models/room.dart';
 import 'package:adventure_game_version_1/services/commands/command.dart';
 import 'package:adventure_game_version_1/services/print_color_code.dart';
 
-class Player {
+abstract class Player {
   final String _name;
+  final int _attack;
+  final int _health;
+  final int _defence;
   late Room _currentRoom;
   late final List<GameObject> _inventory = [];
 
-  Player(this._name);
+  Player(this._name, this._attack, this._health, this._defence);
 
   String get getName => _name;
+  int get getAttack => _attack;
+  int get getDefence => _defence;
+  int get getHealth => _health;
 
   bool handleCommand(Command command) {
     return command.execute(this);

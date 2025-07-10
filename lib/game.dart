@@ -1,7 +1,9 @@
 import 'dart:io';
 
 import 'package:adventure_game_version_1/models/room.dart';
-import 'package:adventure_game_version_1/player.dart';
+import 'package:adventure_game_version_1/services/classes/class_factory.dart';
+import 'package:adventure_game_version_1/services/classes/player.dart';
+import 'package:adventure_game_version_1/services/classes/tank.dart';
 import 'package:adventure_game_version_1/services/commands/command.dart';
 import 'package:adventure_game_version_1/services/commands/command_factory.dart';
 import 'package:adventure_game_version_1/services/print_color_code.dart';
@@ -51,8 +53,30 @@ Without holding you further, let's start the game and GodSpeed adventurer.
       print("");
     } while (flag);
 
-    ///creates a new player.
-    Player player = Player(playerName);
+    print(
+      PrintColorCode().colorize("""
+The available classes are:
+    1. Healer
+    2. Tank
+    3. Assassin
+    4. Mage
+    5. Knight
+    
+Please pick a class:
+                """, PrintColorCode.blue),
+    );
+
+    Player player;
+    do{
+      String playerClass = stdin.readLineSync()!.trim();
+      try {
+        player = getClass(playerClass, playerName)!;
+        break;
+      } catch (e) {
+        continue;
+      }
+    } while (true);
+
 
     ///sets the wolrd for the player.
     player.setStartRoom(startRoom);

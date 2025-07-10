@@ -1,4 +1,4 @@
-import 'package:adventure_game_version_1/player.dart';
+import 'package:adventure_game_version_1/services/classes/player.dart';
 import 'package:adventure_game_version_1/services/commands/command.dart';
 import 'package:adventure_game_version_1/services/print_color_code.dart';
 
