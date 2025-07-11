@@ -6,15 +6,17 @@ import 'package:adventure_game_version_1/services/print_color_code.dart';
 
 abstract class Player {
   final String _name;
+  final String _class;
   final int _attack;
   final int _health;
   final int _defence;
   late Room _currentRoom;
   late final List<GameObject> _inventory = [];
 
-  Player(this._name, this._attack, this._health, this._defence);
+  Player(this._name, this._class, this._attack, this._health, this._defence);
 
   String get getName => _name;
+  String get getClass => _class;
   int get getAttack => _attack;
   int get getDefence => _defence;
   int get getHealth => _health;

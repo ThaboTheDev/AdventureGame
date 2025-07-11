@@ -5,6 +5,7 @@ import 'package:adventure_game_version_1/services/commands/inventory_command.dar
 import 'package:adventure_game_version_1/services/commands/look_command.dart';
 import 'package:adventure_game_version_1/services/commands/move_command.dart';
 import 'package:adventure_game_version_1/services/commands/quit_command.dart';
+import 'package:adventure_game_version_1/services/commands/stats_command.dart';
 import 'package:adventure_game_version_1/services/commands/take_command.dart';
 
 class CommandFactory {
@@ -14,6 +15,9 @@ class CommandFactory {
     final value = values.skip(1).join(" ");
 
     switch (move) {
+      case "stats":
+        return StatsCommand(move, value);
+
       case "look":
         return LookCommand(move, value);
 
