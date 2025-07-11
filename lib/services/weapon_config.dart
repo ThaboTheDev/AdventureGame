@@ -2,6 +2,7 @@ import 'dart:math';
 
 import 'package:adventure_game_version_1/models/room.dart';
 import 'package:adventure_game_version_1/models/weapon.dart';
+import 'package:adventure_game_version_1/services/position.dart';
 
 ///receives a list of [Weapons] and uses it to populate a [room].
 class WeaponConfig {
@@ -26,6 +27,12 @@ class WeaponConfig {
     );
 
     for (Weapon weapon in selected) {
+      Position? position = _currentRoom.emptyPosition();
+      if (position == null) {
+        continue;
+      } else {
+        weapon.setPosition(position);
+      }
       _currentRoom.addObject(weapon);
     }
     return _currentRoom;

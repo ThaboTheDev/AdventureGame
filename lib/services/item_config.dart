@@ -2,13 +2,16 @@ import 'dart:math';
 
 import 'package:adventure_game_version_1/models/item.dart';
 import 'package:adventure_game_version_1/models/room.dart';
+import 'package:adventure_game_version_1/services/position.dart';
 
 ///recieves a list of [Items] which are then used to populate a [room].
 class ItemConfig {
   ///the list of rooms.
   final List<Item> _itemJson;
+
   ///the current room to be populated.
   final Room _currentRoom;
+
   ///the max number of items possible.
   final int _amount;
 
@@ -31,6 +34,12 @@ class ItemConfig {
 
     //adds each item to the room.
     for (Item item in selected) {
+      Position? position = _currentRoom.emptyPosition();
+      if (position == null) {
+        continue;
+      } else {
+        item.setPosition(position);
+      }
       _currentRoom.addObject(item);
     }
     return _currentRoom;

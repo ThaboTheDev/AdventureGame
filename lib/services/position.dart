@@ -10,7 +10,7 @@ class Position {
   @override
   bool operator ==(Object other) {
     if (runtimeType != other.runtimeType) return false;
-    if (other == this) return true;
+    if (identical(other,this)) return true;
     Position otherPosition = other as Position;
     return getX == otherPosition.getX && getY == otherPosition.getY;
   }

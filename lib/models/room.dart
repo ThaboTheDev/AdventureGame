@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'dart:math';
 
 import 'package:adventure_game_version_1/models/characters/non_player_characters.dart';
 import 'package:adventure_game_version_1/models/game_object.dart';
@@ -16,11 +17,12 @@ class Room {
   ///the description of the room.
   final String _description;
 
-  final Position topLeft = Position(-10, 10);
-  final Position bottomRight = Position(10, -10);
+  final Position _topLeft = Position(-10, 10);
+  final Position _bottomRight = Position(10, -10);
 
   ///a list of all items in a room.
   final List<GameObject> _objects = [];
+  final Random _random = Random();
 
   ///a map of all exits in the room.
   final Map<String, Room> _exits = {};
@@ -28,6 +30,9 @@ class Room {
 
   ///creates a new [room] with the given [name], [description].
   Room(this._name, this._description);
+
+  Position get topLeft => _topLeft;
+  Position get bottomRight => _bottomRight;
 
   ///displayes everthing withtin the room.
   void describeRoom() {
@@ -51,6 +56,7 @@ class Room {
       print(PrintColorCode().colorize("===== NPCs =====", PrintColorCode.cyan));
       for (NonPlayerCharacters chr in _characters) {
         chr.printString();
+        print("");
       }
     } else {
       print(
@@ -67,6 +73,7 @@ class Room {
       );
       for (GameObject object in _objects) {
         object.printSrtring();
+        print("");
       }
     } else {
       print(
@@ -149,6 +156,36 @@ class Room {
         stdout.write(PrintColorCode().colorize("* ", PrintColorCode.bold));
       }
       print("");
+    }
+  }
+
+  Position? emptyPosition() {
+    List<Position> emptyPositions = [];
+    bool flag = false;
+    for (int x = topLeft.getX; x <= bottomRight.getX; x++) {
+      for (int y = topLeft.getY; y >= bottomRight.getY; y--) {
+        Position checkPosition = Position(x, y);
+
+        for (GameObject obj in _objects) {
+          if (obj.position == checkPosition) {
+            flag = true;
+          }
+        }
+
+        if (flag) {
+          flag = false;
+          continue;
+        }
+
+        emptyPositions.add(checkPosition);
+        flag = false;
+      }
+    }
+
+    if (emptyPositions.isNotEmpty) {
+      return emptyPositions[_random.nextInt(emptyPositions.length)];
+    } else {
+      return null;
     }
   }
 
