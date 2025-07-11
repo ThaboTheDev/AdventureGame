@@ -1,5 +1,8 @@
+import 'dart:io';
+
 import 'package:adventure_game_version_1/models/characters/non_player_characters.dart';
 import 'package:adventure_game_version_1/models/game_object.dart';
+import 'package:adventure_game_version_1/services/position.dart';
 import 'package:adventure_game_version_1/services/print_color_code.dart';
 
 /// Represents a room in the adventure game world.
@@ -12,6 +15,9 @@ class Room {
 
   ///the description of the room.
   final String _description;
+
+  final Position topLeft = Position(-10, 10);
+  final Position bottomRight = Position(10, -10);
 
   ///a list of all items in a room.
   final List<GameObject> _objects = [];
@@ -28,7 +34,17 @@ class Room {
     print(
       PrintColorCode().colorize("====== $_name ======", PrintColorCode.cyan),
     );
+
     print(PrintColorCode().colorize(_description, PrintColorCode.blue));
+
+    print(
+      PrintColorCode().colorize(
+        "========== Map ==========",
+        PrintColorCode.bold,
+      ),
+    );
+    print("");
+    printMap();
     print("");
 
     if (_characters.isNotEmpty) {
@@ -125,6 +141,15 @@ class Room {
       }
     }
     return null;
+  }
+
+  void printMap() {
+    for (int x = topLeft.getX; x <= bottomRight.getX; x++) {
+      for (int y = topLeft.getY; y >= bottomRight.getY; y--) {
+        stdout.write(PrintColorCode().colorize("* ", PrintColorCode.bold));
+      }
+      print("");
+    }
   }
 
   ///generates a new [room] from the given world data for each room.
