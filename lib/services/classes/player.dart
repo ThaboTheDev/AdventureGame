@@ -2,6 +2,7 @@ import 'package:adventure_game_version_1/models/characters/non_player_characters
 import 'package:adventure_game_version_1/models/game_object.dart';
 import 'package:adventure_game_version_1/models/room.dart';
 import 'package:adventure_game_version_1/services/commands/command.dart';
+import 'package:adventure_game_version_1/services/direction.dart';
 import 'package:adventure_game_version_1/services/position.dart';
 import 'package:adventure_game_version_1/services/print_color_code.dart';
 
@@ -13,6 +14,8 @@ abstract class Player {
   final int _defence;
   late Room _currentRoom;
   Position? _currentPosition;
+  int _degrees = 0;
+  Direction _direction = Direction.north;
   late final List<GameObject> _inventory = [];
 
   Player(this._name, this._class, this._attack, this._health, this._defence);
@@ -120,6 +123,42 @@ abstract class Player {
           PrintColorCode.red,
         ),
       );
+    }
+  }
+
+  void updateDirection(String dir) {
+    switch (dir) {
+      case "left":
+        _degrees -= 90;
+        break;
+
+      case "right":
+        _degrees += 90;
+        break;
+    }
+
+    if (_degrees >= 360) {
+      _degrees -= 360;
+    } else if (_degrees < 0) {
+      _degrees += 360;
+    }
+
+    switch (_degrees) {
+      case 0:
+        _direction = Direction.north;
+        break;
+
+      case 90:
+        _direction = Direction.east;
+        break;
+
+      case 180:
+        _direction = Direction.south;
+        break;
+
+      case 270:
+        _direction = Direction.west;
+        break;
     }
   }
 
