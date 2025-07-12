@@ -5,6 +5,7 @@ import 'package:adventure_game_version_1/services/classes/class_factory.dart';
 import 'package:adventure_game_version_1/services/classes/player.dart';
 import 'package:adventure_game_version_1/services/commands/command.dart';
 import 'package:adventure_game_version_1/services/commands/command_factory.dart';
+import 'package:adventure_game_version_1/services/position.dart';
 import 'package:adventure_game_version_1/services/print_color_code.dart';
 import 'package:adventure_game_version_1/services/room_config.dart';
 
@@ -66,7 +67,7 @@ Please pick a class:
     );
 
     Player player;
-    do{
+    do {
       String playerClass = stdin.readLineSync()!.trim();
       try {
         player = getClass(playerClass, playerName)!;
@@ -76,9 +77,17 @@ Please pick a class:
       }
     } while (true);
 
-
     ///sets the wolrd for the player.
     player.setStartRoom(startRoom);
+    Position? startPosition = startRoom.emptyPosition();
+
+    if (startPosition != null) {
+      player.setPosition(startPosition);
+    } else {
+      print(PrintColorCode().colorize("The room is full.", PrintColorCode.red));
+      exit(1);
+    }
+    
     String? playerInput;
 
     ///gives the description of the starting room.

@@ -10,6 +10,7 @@ class StatsCommand extends Command {
 
 Name: ${target.getName}
 Class: ${target.getClass}
+Position: X=${target.currentPosition.getX}, Y=${target.currentPosition.getY}
 
 ======= Stats =======
 

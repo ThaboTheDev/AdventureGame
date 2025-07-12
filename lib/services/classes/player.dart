@@ -2,6 +2,7 @@ import 'package:adventure_game_version_1/models/characters/non_player_characters
 import 'package:adventure_game_version_1/models/game_object.dart';
 import 'package:adventure_game_version_1/models/room.dart';
 import 'package:adventure_game_version_1/services/commands/command.dart';
+import 'package:adventure_game_version_1/services/position.dart';
 import 'package:adventure_game_version_1/services/print_color_code.dart';
 
 abstract class Player {
@@ -11,6 +12,7 @@ abstract class Player {
   final int _health;
   final int _defence;
   late Room _currentRoom;
+  Position? _currentPosition;
   late final List<GameObject> _inventory = [];
 
   Player(this._name, this._class, this._attack, this._health, this._defence);
@@ -20,6 +22,7 @@ abstract class Player {
   int get getAttack => _attack;
   int get getDefence => _defence;
   int get getHealth => _health;
+  Position get currentPosition => _currentPosition!;
 
   bool handleCommand(Command command) {
     return command.execute(this);
@@ -28,6 +31,10 @@ abstract class Player {
   void look() {
     print("");
     _currentRoom.describeRoom();
+  }
+
+  void setPosition(Position pos) {
+    _currentPosition = pos;
   }
 
   void move(String direction) {
