@@ -126,6 +126,27 @@ abstract class Player {
     }
   }
 
+  bool upadtePosition(String dir, int steps) {
+    int x = _direction.dx;
+    int y = _direction.dy;
+
+    if (dir == "back") {
+      x *= -1;
+      y *= -1;
+    }
+
+    Position intermediate = Position(
+      _currentPosition!.getX + x * steps,
+      _currentPosition!.getY + y * steps,
+    );
+
+    if (intermediate.isInside(_currentRoom.topLeft, _currentRoom.bottomRight)) {
+      _currentPosition = intermediate;
+      return true;
+    }
+    return false;
+  }
+
   void updateDirection(String dir) {
     switch (dir) {
       case "left":
