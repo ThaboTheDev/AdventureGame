@@ -11,7 +11,6 @@ We follow the **Conventional Commits** standard. This helps with readability, au
 
 ### Format
 
-
 ### Types
 
 | Type      | Description                                                   |
@@ -31,6 +30,7 @@ We follow the **Conventional Commits** standard. This helps with readability, au
 ### Scopes (Optional)
 
 Use a scope to indicate what area is being affected:
+
 - `auth`, `api`, `ui`, `login`, `docs`, `config`, etc.
 
 ### Examples
