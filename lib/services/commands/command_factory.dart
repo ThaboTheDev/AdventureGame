@@ -1,6 +1,5 @@
 import 'package:adventure_game_version_1/services/commands/command.dart';
 import 'package:adventure_game_version_1/services/commands/error_command.dart';
-import 'package:adventure_game_version_1/services/commands/forward_command.dart';
 import 'package:adventure_game_version_1/services/commands/interact_command.dart';
 import 'package:adventure_game_version_1/services/commands/inventory_command.dart';
 import 'package:adventure_game_version_1/services/commands/look_command.dart';
@@ -19,16 +18,13 @@ class CommandFactory {
       case "stats":
         return StatsCommand(move, value);
 
-      case "forward":
-        return ForwardCommand(move, value);
-
       case "look":
         return LookCommand(move, value);
 
       case "inventory":
         return InventoryCommand(move, value);
 
-      case "move":
+      case "back" || "forward":
         return MoveCommand(move, value);
 
       case "interact":
