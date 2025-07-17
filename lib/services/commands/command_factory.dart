@@ -7,6 +7,7 @@ import 'package:adventure_game_version_1/services/commands/move_command.dart';
 import 'package:adventure_game_version_1/services/commands/quit_command.dart';
 import 'package:adventure_game_version_1/services/commands/stats_command.dart';
 import 'package:adventure_game_version_1/services/commands/take_command.dart';
+import 'package:adventure_game_version_1/services/commands/turn_command.dart';
 
 class CommandFactory {
   Command create(String command) {
@@ -17,6 +18,9 @@ class CommandFactory {
     switch (move) {
       case "stats":
         return StatsCommand(move, value);
+
+      case "turn":
+        return TurnCommand(move, value);
 
       case "look":
         return LookCommand(move, value);
