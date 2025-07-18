@@ -32,5 +32,10 @@ void main() {
       target.updateDirection("right");
       expect(target.direction, Direction.east);
     });
+
+    test("invalid turn right", () {
+      target.updateDirection("righr");
+      expect(target.direction, Direction.north);
+    });
   });
 }
