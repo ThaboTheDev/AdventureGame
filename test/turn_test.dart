@@ -16,9 +16,16 @@ void main() {
   });
 
   group("turn left", () {
-    test("turn left", () {
+    test("turn left valid", () {
       target.updateDirection("left");
       expect(target.direction, Direction.west);
+    });
+  });
+
+  group("turn right", () {
+    test("turn right valid", () {
+      target.updateDirection("right");
+      expect(target.direction, Direction.east);
     });
   });
 }
