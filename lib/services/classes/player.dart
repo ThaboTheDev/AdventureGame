@@ -41,22 +41,6 @@ abstract class Player {
     _currentPosition = pos;
   }
 
-  void move(String direction) {
-    Room? newRoom = _currentRoom.getExit(direction);
-
-    if (newRoom != null) {
-      _currentRoom = newRoom;
-      _currentRoom.describeRoom();
-    } else {
-      print(
-        PrintColorCode().colorize(
-          "There is no exit in the $direction direction",
-          PrintColorCode.red,
-        ),
-      );
-    }
-  }
-
   void takeItem(String itemName) {
     print("");
     GameObject? newItem = _currentRoom.getItem(itemName);
@@ -143,6 +127,17 @@ abstract class Player {
 
     if (intermediate.isInside(_currentRoom.topLeft, _currentRoom.bottomRight)) {
       _currentPosition = intermediate;
+      Room? nextRoom = _currentRoom.getExit(intermediate);
+      if (nextRoom != null) {
+        _currentRoom = nextRoom;
+        print(
+          PrintColorCode().colorize(
+            "You enter a new room",
+            PrintColorCode.green,
+          ),
+        );
+        _currentRoom.describeRoom();
+      }
       return true;
     }
     return false;

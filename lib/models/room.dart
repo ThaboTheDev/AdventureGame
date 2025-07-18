@@ -25,7 +25,7 @@ class Room {
   final Random _random = Random();
 
   ///a map of all exits in the room.
-  final Map<String, Room> _exits = {};
+  final Map<Position, Room> _exits = {};
   final List<NonPlayerCharacters> _characters = [];
 
   ///creates a new [room] with the given [name], [description].
@@ -88,8 +88,8 @@ class Room {
       print(
         PrintColorCode().colorize("====== Exits ======", PrintColorCode.cyan),
       );
-      for (String direction in _exits.keys) {
-        print("-- $direction");
+      for (Position direction in _exits.keys) {
+        print("-- Position: ${direction.getX},${direction.getY}");
       }
     } else {
       print(
@@ -122,15 +122,15 @@ class Room {
   }
 
   ///adds exits to the list of exits in the room.
-  void addExit(String direction, Room room) {
-    if (!_exits.containsKey(direction.toLowerCase())) {
+  void addExit(Position direction, Room room) {
+    if (!_exits.containsKey(direction)) {
       _exits[direction] = room;
     }
   }
 
   ///returns the `room` linked to the exit, if available or else `null`.
-  Room? getExit(String direction) {
-    return _exits[direction.toLowerCase()];
+  Room? getExit(Position direction) {
+    return _exits[direction];
   }
 
   void addNpc(NonPlayerCharacters character) {
