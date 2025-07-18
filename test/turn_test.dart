@@ -20,6 +20,11 @@ void main() {
       target.updateDirection("left");
       expect(target.direction, Direction.west);
     });
+
+    test("invalid turn left", () {
+      target.updateDirection("lett");
+      expect(target.direction, Direction.north);
+    });
   });
 
   group("turn right", () {
