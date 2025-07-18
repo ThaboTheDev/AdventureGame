@@ -26,6 +26,7 @@ abstract class Player {
   int get getDefence => _defence;
   int get getHealth => _health;
   Position get currentPosition => _currentPosition!;
+  Direction get direction => _direction;
 
   bool handleCommand(Command command) {
     return command.execute(this);
