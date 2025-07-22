@@ -161,7 +161,7 @@ class Room {
         PrintColorCode.bold,
       ),
     );
-    
+
     for (int x = topLeft.getX; x <= bottomRight.getX; x++) {
       for (int y = topLeft.getY; y >= bottomRight.getY; y--) {
         stdout.write(PrintColorCode().colorize("* ", PrintColorCode.bold));
@@ -199,6 +199,8 @@ class Room {
       return null;
     }
   }
+
+
 
   ///generates a new [room] from the given world data for each room.
   factory Room.fromJson(Map<String, dynamic> json) {

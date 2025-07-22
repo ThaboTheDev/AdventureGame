@@ -1,0 +1,171 @@
+{
+  "armor": [
+    {
+      "id": "iron_helmet",
+      "name": "Iron Helmet",
+      "description": "A sturdy iron helmet that protects your head.",
+      "type": "helmet",
+      "defence": 3,
+      "healthBonus": 5,
+      "attackBonus": 0,
+      "rarity": "uncommon",
+      "isTakeable": true
+    },
+    {
+      "id": "steel_chestplate",
+      "name": "Steel Chestplate",
+      "description": "Heavy chest armor forged from steel.",
+      "type": "chestplate",
+      "defence": 7,
+      "healthBonus": 10,
+      "attackBonus": 0,
+      "rarity": "rare",
+      "isTakeable": true
+    },
+    {
+      "id": "leather_boots",
+      "name": "Leather Boots",
+      "description": "Light boots that offer some protection and agility.",
+      "type": "boots",
+      "defence": 2,
+      "healthBonus": 2,
+      "attackBonus": 1,
+      "rarity": "common",
+      "isTakeable": true
+    },
+    {
+      "id": "dragon_scale_shield",
+      "name": "Dragon Scale Shield",
+      "description": "A shield made from dragon scales, resistant to fire.",
+      "type": "shield",
+      "defence": 9,
+      "healthBonus": 5,
+      "attackBonus": 0,
+      "rarity": "epic",
+      "isTakeable": true
+    },
+    {
+      "id": "mystic_robe",
+      "name": "Mystic Robe",
+      "description": "Robes imbued with arcane energies, boosting attack power.",
+      "type": "chestplate",
+      "defence": 3,
+      "healthBonus": 3,
+      "attackBonus": 5,
+      "rarity": "rare",
+      "isTakeable": true
+    },
+    {
+      "id": "shadow_hood",
+      "name": "Shadow Hood",
+      "description": "A hood that enhances stealth and attack.",
+      "type": "helmet",
+      "defence": 1,
+      "healthBonus": 2,
+      "attackBonus": 4,
+      "rarity": "epic",
+      "isTakeable": true
+    },
+    {
+      "id": "iron_gauntlets",
+      "name": "Iron Gauntlets",
+      "description": "Heavy gloves that protect the hands and improve grip.",
+      "type": "gloves",
+      "defence": 3,
+      "healthBonus": 1,
+      "attackBonus": 2,
+      "rarity": "uncommon",
+      "isTakeable": true
+    },
+    {
+      "id": "silk_cowl",
+      "name": "Silk Cowl",
+      "description": "A delicate cowl that offers little protection but enhances magic.",
+      "type": "helmet",
+      "defence": 1,
+      "healthBonus": 0,
+      "attackBonus": 6,
+      "rarity": "rare",
+      "isTakeable": true
+    },
+    {
+      "id": "titan_boots",
+      "name": "Titan Boots",
+      "description": "Massive boots that grant strength and durability.",
+      "type": "boots",
+      "defence": 5,
+      "healthBonus": 7,
+      "attackBonus": 0,
+      "rarity": "rare",
+      "isTakeable": true
+    },
+    {
+      "id": "storm_shield",
+      "name": "Storm Shield",
+      "description": "A shield crackling with electrical energy.",
+      "type": "shield",
+      "defence": 8,
+      "healthBonus": 4,
+      "attackBonus": 2,
+      "rarity": "epic",
+      "isTakeable": true
+    },
+    {
+      "id": "hunter_cloak",
+      "name": "Hunter Cloak",
+      "description": "A lightweight cloak that increases stealth and speed.",
+      "type": "chestplate",
+      "defence": 2,
+      "healthBonus": 2,
+      "attackBonus": 3,
+      "rarity": "rare",
+      "isTakeable": true
+    },
+    {
+      "id": "berserker_belt",
+      "name": "Berserker Belt",
+      "description": "A leather belt that boosts attack power at the cost of defense.",
+      "type": "belt",
+      "defence": -1,
+      "healthBonus": 3,
+      "attackBonus": 7,
+      "rarity": "rare",
+      "isTakeable": true
+    },
+    {
+      "id": "vampire_bracers",
+      "name": "Vampire Bracers",
+      "description": "Bracers that leech life from enemies.",
+      "type": "bracers",
+      "defence": 3,
+      "healthBonus": 5,
+      "attackBonus": 3,
+      "rarity": "epic",
+      "isTakeable": true,
+      "buff": "life_steal"
+    },
+    {
+      "id": "frost_guardian_cloak",
+      "name": "Frost Guardian Cloak",
+      "description": "A cloak imbued with icy magic, granting resistance to cold.",
+      "type": "cloak",
+      "defence": 4,
+      "healthBonus": 6,
+      "attackBonus": 1,
+      "rarity": "epic",
+      "isTakeable": true,
+      "buff": "cold_resistance"
+    },
+    {
+      "id": "earthshaker_gauntlets",
+      "name": "Earthshaker Gauntlets",
+      "description": "Gauntlets that enhance strength and stability.",
+      "type": "gloves",
+      "defence": 4,
+      "healthBonus": 4,
+      "attackBonus": 5,
+      "rarity": "rare",
+      "isTakeable": true
+    }
+  ]
+}

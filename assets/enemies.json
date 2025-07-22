@@ -1,0 +1,139 @@
+{
+  "enemies": [
+    {
+      "type": "boss",
+      "name": "Gruk the Devourer",
+      "description": "A monstrous being of fire and smoke.",
+      "hp": 150,
+      "damage": 25,
+      "behavior": "aggressive",
+      "loot": ["Flame Core", "Molten Shard", "Gold Coin"],
+      "xp": 200,
+      "dialogue": [
+        "I will burn your world to ash!",
+        "Your courage will taste delicious.",
+        "Come, face your end!"
+      ]
+    },
+    {
+      "type": "boss",
+      "name": "Shade Assassin",
+      "description": "Strikes silently from the shadows.",
+      "hp": 120,
+      "damage": 30,
+      "behavior": "stealthy",
+      "loot": ["Shadow Blade", "Smoke Bomb", "Silver Coin"],
+      "xp": 180,
+      "dialogue": [
+        "You’ll never hear your end.",
+        "One cut is all it takes.",
+        "Silence is my ally."
+      ]
+    },
+    {
+      "type": "boss",
+      "name": "Bonecrusher",
+      "description": "A massive brute with a club of bones.",
+      "hp": 200,
+      "damage": 20,
+      "behavior": "tank",
+      "loot": ["Bone Club", "Sturdy Armor Plate", "Iron Coin"],
+      "xp": 220,
+      "dialogue": [
+        "SMASH FIRST. QUESTIONS NEVER!",
+        "You look like you crunch good.",
+        "Throwing bones is my favorite pastime."
+      ]
+    },
+
+    {
+      "type": "basic",
+      "name": "Goblin Scout",
+      "description": "A sneaky creature with sharp teeth and a foul smell.",
+      "hp": 40,
+      "damage": 10,
+      "behavior": "evasive",
+      "loot": ["Rusty Dagger", "Torn Cloth", "Copper Coin"],
+      "xp": 30,
+      "dialogue": [
+        "Shiny? Give shiny!",
+        "You not welcome here!",
+        "Sneak, stab, run!"
+      ]
+    },
+    {
+      "type": "basic",
+      "name": "Cave Troll",
+      "description": "Large, slow, and incredibly strong.",
+      "hp": 90,
+      "damage": 15,
+      "behavior": "slow_brute",
+      "loot": ["Troll Tooth", "Club", "Silver Coin"],
+      "xp": 60,
+      "dialogue": [
+        "Troll hungry!",
+        "You small. Easy to squish.",
+        "Leave cave, or stay forever!"
+      ]
+    },
+    {
+      "type": "basic",
+      "name": "Fire Imp",
+      "description": "A mischievous creature that hurls fireballs.",
+      "hp": 35,
+      "damage": 12,
+      "behavior": "ranged",
+      "loot": ["Ember Spark", "Ash Pouch"],
+      "xp": 40,
+      "dialogue": [
+        "Hot enough for ya?",
+        "Catch this—oops, too late!",
+        "Flame on!"
+      ]
+    },
+    {
+      "type": "basic",
+      "name": "Swamp Slime",
+      "description": "A squelching pile of ooze that corrodes armor.",
+      "hp": 50,
+      "damage": 8,
+      "behavior": "corrosive",
+      "loot": ["Slime Core", "Corroded Ring"],
+      "xp": 35,
+      "dialogue": ["Glllrrrggghh...", "Ssssslurp...", "Hissss... drip..."]
+    },
+    {
+      "type": "basic",
+      "name": "Wyvern Hatchling",
+      "description": "A young dragon-like creature with sharp talons.",
+      "hp": 60,
+      "damage": 18,
+      "behavior": "flying",
+      "loot": ["Wyvern Scale", "Tiny Claw"],
+      "xp": 50,
+      "dialogue": ["Screee!", "Flap and bite!", "Sky mine!"]
+    },
+    {
+      "type": "basic",
+      "name": "Shadow Wolf",
+      "description": "A beast that strikes from the dark.",
+      "hp": 55,
+      "damage": 14,
+      "behavior": "ambush",
+      "loot": ["Fur Pelt", "Shadow Fang"],
+      "xp": 45,
+      "dialogue": ["Arooooo...", "You smell like fear.", "Run. It won't help."]
+    },
+    {
+      "type": "basic",
+      "name": "Banshee Wail",
+      "description": "A ghostly spirit whose scream drains the soul.",
+      "hp": 70,
+      "damage": 16,
+      "behavior": "screamer",
+      "loot": ["Wailing Orb", "Spectral Veil"],
+      "xp": 55,
+      "dialogue": ["WAAAAAAAIL!", "Your time… is nigh…", "I sing for the dead."]
+    }
+  ]
+}

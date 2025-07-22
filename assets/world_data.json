@@ -1,56 +1,4 @@
 {
-  "weapons": [
-    {
-      "name": "Sword of Dawn",
-      "description": "A glowing sword said to cut through shadows.",
-      "isTakeable": true
-    },
-    {
-      "name": "Axe of Doom",
-      "description": "Heavy and brutal, forged in dragon fire.",
-      "isTakeable": true
-    },
-    {
-      "name": "Bow of Shadows",
-      "description": "Fires silent arrows that strike without warning.",
-      "isTakeable": true
-    },
-    {
-      "name": "Spear of the Ancients",
-      "description": "Carved with runes, it hums with old power.",
-      "isTakeable": true
-    },
-    {
-      "name": "Dagger of Whispers",
-      "description": "Said to whisper the secrets of those it kills.",
-      "isTakeable": true
-    },
-    {
-      "name": "Hammer of Titans",
-      "description": "Can crush stone walls with a single blow.",
-      "isTakeable": true
-    },
-    {
-      "name": "Wand of Illusions",
-      "description": "Creates phantom doubles of the user.",
-      "isTakeable": true
-    },
-    {
-      "name": "Flame Whip",
-      "description": "A fiery weapon that leaves scorched trails.",
-      "isTakeable": true
-    },
-    {
-      "name": "Icicle Pike",
-      "description": "Pierces through armor and freezes wounds.",
-      "isTakeable": true
-    },
-    {
-      "name": "Crystal Mace",
-      "description": "Glows when near enemies, resonates on impact.",
-      "isTakeable": true
-    }
-  ],
   "rooms": [
     {
       "name": "Throne Room",
@@ -93,7 +41,7 @@
       "description": "Distorted reflections surround you."
     },
     {
-      "name": "Alchemist\u2019s Lab",
+      "name": "Alchemist’s Lab",
       "description": "Bubbling flasks and glowing powders everywhere."
     }
   ],
@@ -135,7 +83,7 @@
     },
     {
       "name": "Ancient Scroll",
-      "description": "Written in a language you can\u2019t read.",
+      "description": "Written in a language you can’t read.",
       "isTakeable": true
     }
   ],
@@ -198,36 +146,6 @@
         "The forest is sick. You can help heal it.",
         "Seek the root shrine and light the flame.",
         "Time is slipping away."
-      ]
-    },
-    {
-      "type": "enemy",
-      "name": "Gruk the Devourer",
-      "description": "A monstrous being of fire and smoke.",
-      "dialogue": [
-        "I will burn your world to ash!",
-        "Your courage will taste delicious.",
-        "Come, face your end!"
-      ]
-    },
-    {
-      "type": "enemy",
-      "name": "Shade Assassin",
-      "description": "Strikes silently from the shadows.",
-      "dialogue": [
-        "You’ll never hear your end.",
-        "One cut is all it takes.",
-        "Silence is my ally."
-      ]
-    },
-    {
-      "type": "enemy",
-      "name": "Bonecrusher",
-      "description": "A massive brute with a club of bones.",
-      "dialogue": [
-        "SMASH FIRST. QUESTIONS NEVER!",
-        "You look like you crunch good.",
-        "Throwing bones is my favorite pastime."
       ]
     },
     {
