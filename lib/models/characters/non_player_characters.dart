@@ -5,7 +5,7 @@ import 'package:adventure_game_version_1/models/characters/quest_givers.dart';
 import 'package:adventure_game_version_1/models/characters/spirits.dart';
 import 'package:adventure_game_version_1/models/characters/tricksters.dart';
 import 'package:adventure_game_version_1/models/characters/wanderers.dart';
-import 'package:adventure_game_version_1/services/print_color_code.dart';
+import 'package:adventure_game_version_1/services/utils/print_color_code.dart';
 
 abstract class NonPlayerCharacters {
   final String _name;

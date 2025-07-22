@@ -1,6 +1,6 @@
 import 'package:adventure_game_version_1/services/classes/player.dart';
 import 'package:adventure_game_version_1/services/commands/command.dart';
-import 'package:adventure_game_version_1/services/print_color_code.dart';
+import 'package:adventure_game_version_1/services/utils/print_color_code.dart';
 
 class ErrorCommand extends Command {
   //ignore: unused_field

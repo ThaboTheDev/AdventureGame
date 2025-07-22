@@ -6,8 +6,8 @@ import 'package:adventure_game_version_1/services/classes/player.dart';
 import 'package:adventure_game_version_1/services/commands/command.dart';
 import 'package:adventure_game_version_1/services/commands/command_factory.dart';
 import 'package:adventure_game_version_1/services/position.dart';
-import 'package:adventure_game_version_1/services/print_color_code.dart';
-import 'package:adventure_game_version_1/services/room_config.dart';
+import 'package:adventure_game_version_1/services/utils/print_color_code.dart';
+import 'package:adventure_game_version_1/services/utils/room_config.dart';
 
 ///creates the game thats gonna be played.
 class Game {

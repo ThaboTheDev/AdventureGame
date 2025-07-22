@@ -5,12 +5,11 @@ import 'package:adventure_game_version_1/models/item.dart';
 import 'package:adventure_game_version_1/models/room.dart';
 import 'package:adventure_game_version_1/models/weapon.dart';
 import 'package:adventure_game_version_1/services/direction.dart';
-import 'package:adventure_game_version_1/services/item_config.dart';
-import 'package:adventure_game_version_1/services/load_wrld_data.dart';
-import 'package:adventure_game_version_1/services/npc_config.dart';
+import 'package:adventure_game_version_1/services/utils/item_config.dart';
+import 'package:adventure_game_version_1/services/utils/load_wrld_data.dart';
+import 'package:adventure_game_version_1/services/utils/npc_config.dart';
+import 'package:adventure_game_version_1/services/utils/weapon_config.dart';
 import 'package:adventure_game_version_1/services/position.dart';
-import 'package:adventure_game_version_1/services/weapon_config.dart';
-
 ///Creates the world from the world data.
 ///
 ///uses the given data to generate rooms and populate those rooms with weapons

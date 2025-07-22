@@ -4,7 +4,7 @@ import 'dart:math';
 import 'package:adventure_game_version_1/models/characters/non_player_characters.dart';
 import 'package:adventure_game_version_1/models/game_object.dart';
 import 'package:adventure_game_version_1/services/position.dart';
-import 'package:adventure_game_version_1/services/print_color_code.dart';
+import 'package:adventure_game_version_1/services/utils/print_color_code.dart';
 
 /// Represents a room in the adventure game world.
 ///

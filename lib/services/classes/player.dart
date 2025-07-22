@@ -4,7 +4,7 @@ import 'package:adventure_game_version_1/models/room.dart';
 import 'package:adventure_game_version_1/services/commands/command.dart';
 import 'package:adventure_game_version_1/services/direction.dart';
 import 'package:adventure_game_version_1/services/position.dart';
-import 'package:adventure_game_version_1/services/print_color_code.dart';
+import 'package:adventure_game_version_1/services/utils/print_color_code.dart';
 
 abstract class Player {
   final String _name;

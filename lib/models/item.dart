@@ -1,5 +1,5 @@
 import 'package:adventure_game_version_1/models/game_object.dart';
-import 'package:adventure_game_version_1/services/print_color_code.dart';
+import 'package:adventure_game_version_1/services/utils/print_color_code.dart';
 
 class Item extends GameObject {
   Item(super.name, super.description, super.isTakeable);

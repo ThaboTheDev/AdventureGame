@@ -1,5 +1,5 @@
 import 'package:adventure_game_version_1/services/position.dart';
-import 'package:adventure_game_version_1/services/print_color_code.dart';
+import 'package:adventure_game_version_1/services/utils/print_color_code.dart';
 
 abstract class GameObject {
   final String _name;

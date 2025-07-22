@@ -2,7 +2,7 @@ import 'package:adventure_game_version_1/models/room.dart';
 import 'package:adventure_game_version_1/services/classes/class_factory.dart';
 import 'package:adventure_game_version_1/services/classes/player.dart';
 import 'package:adventure_game_version_1/services/position.dart';
-import 'package:adventure_game_version_1/services/room_config.dart';
+import 'package:adventure_game_version_1/services/utils/room_config.dart';
 import 'package:test/test.dart';
 
 void main() {
