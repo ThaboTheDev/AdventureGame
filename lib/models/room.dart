@@ -51,25 +51,7 @@ class Room {
     }
   }
 
-  ///displayes everthing withtin the room.
-  void describeRoom() {
-    print(
-      PrintColorCode().colorize("====== $_name ======", PrintColorCode.cyan),
-    );
-
-    print(PrintColorCode().colorize(_description, PrintColorCode.blue));
-
-    print(
-      PrintColorCode().colorize(
-        "========== Map ==========",
-        PrintColorCode.bold,
-      ),
-    );
-    print("");
-    printMap();
-    print("");
-    listNpcs();
-
+  void listItems() {
     if (_objects.isNotEmpty) {
       print(
         PrintColorCode().colorize("===== Items =====", PrintColorCode.cyan),
@@ -86,7 +68,9 @@ class Room {
         ),
       );
     }
-    print("");
+  }
+
+  void listExits() {
     if (_exits.isNotEmpty) {
       print(
         PrintColorCode().colorize("====== Exits ======", PrintColorCode.cyan),
@@ -102,6 +86,23 @@ class Room {
         ),
       );
     }
+  }
+
+  ///displayes everthing withtin the room.
+  void describeRoom() {
+    print(
+      PrintColorCode().colorize("====== $_name ======", PrintColorCode.cyan),
+    );
+
+    print(PrintColorCode().colorize(_description, PrintColorCode.blue));
+
+    
+    print("");
+    printMap();
+    print("");
+    listNpcs();
+    listItems();
+    listExits();
   }
 
   ///adds objects to the room.
@@ -154,6 +155,13 @@ class Room {
   }
 
   void printMap() {
+    print(
+      PrintColorCode().colorize(
+        "========== Map ==========",
+        PrintColorCode.bold,
+      ),
+    );
+    
     for (int x = topLeft.getX; x <= bottomRight.getX; x++) {
       for (int y = topLeft.getY; y >= bottomRight.getY; y--) {
         stdout.write(PrintColorCode().colorize("* ", PrintColorCode.bold));
