@@ -1,3 +1,4 @@
+import 'package:adventure_game_version_1/services/commands/clear_command.dart';
 import 'package:adventure_game_version_1/services/commands/command.dart';
 import 'package:adventure_game_version_1/services/commands/error_command.dart';
 import 'package:adventure_game_version_1/services/commands/interact_command.dart';
@@ -16,6 +17,9 @@ class CommandFactory {
     final value = values.skip(1).join(" ");
 
     switch (move) {
+      case "clear":
+        return ClearCommand(move, value);
+        
       case "stats":
         return StatsCommand(move, value);
 
