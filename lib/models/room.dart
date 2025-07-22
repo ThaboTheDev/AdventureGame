@@ -34,6 +34,23 @@ class Room {
   Position get topLeft => _topLeft;
   Position get bottomRight => _bottomRight;
 
+  void listNpcs() {
+    if (_characters.isNotEmpty) {
+      print(PrintColorCode().colorize("===== NPCs =====", PrintColorCode.cyan));
+      for (NonPlayerCharacters chr in _characters) {
+        chr.printString();
+        print("");
+      }
+    } else {
+      print(
+        PrintColorCode().colorize(
+          "There are no NPCs in this room",
+          PrintColorCode.red,
+        ),
+      );
+    }
+  }
+
   ///displayes everthing withtin the room.
   void describeRoom() {
     print(
@@ -51,22 +68,8 @@ class Room {
     print("");
     printMap();
     print("");
+    listNpcs();
 
-    if (_characters.isNotEmpty) {
-      print(PrintColorCode().colorize("===== NPCs =====", PrintColorCode.cyan));
-      for (NonPlayerCharacters chr in _characters) {
-        chr.printString();
-        print("");
-      }
-    } else {
-      print(
-        PrintColorCode().colorize(
-          "There are no NPCs in this room",
-          PrintColorCode.red,
-        ),
-      );
-    }
-    print("");
     if (_objects.isNotEmpty) {
       print(
         PrintColorCode().colorize("===== Items =====", PrintColorCode.cyan),
