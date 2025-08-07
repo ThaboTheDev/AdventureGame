@@ -4,14 +4,15 @@ import 'package:adventure_game_version_1/services/utils/print_color_code.dart';
 abstract class GameObject {
   final String _name;
   final String _description;
-  final bool _isTakeable;
+  bool? _isTakeable;
   Position? _position;
 
   GameObject(this._name, this._description, this._isTakeable);
+  GameObject.b(this._name, this._description);
 
   String get getName => _name;
   String get getDescription => _description;
-  bool get getIsTakeable => _isTakeable;
+  bool get getIsTakeable => _isTakeable!;
   Position get position => _position!;
 
   void interact();

@@ -10,6 +10,7 @@ import 'package:adventure_game_version_1/services/utils/load_wrld_data.dart';
 import 'package:adventure_game_version_1/services/utils/npc_config.dart';
 import 'package:adventure_game_version_1/services/utils/weapon_config.dart';
 import 'package:adventure_game_version_1/services/position.dart';
+
 ///Creates the world from the world data.
 ///
 ///uses the given data to generate rooms and populate those rooms with weapons
@@ -20,16 +21,17 @@ class RoomConfig {
   ///
   ///reutrns the starting room that the player starts in.
   Random random = Random();
-  
+
   Future<Room> generateLinearRoomPath() async {
     //Load the world data from a json file.
-    final data = await loadWorldData();
+    final worldData = await loadWorldData();
+    final weapondata = await loadWeaponData();
 
     //change the data into individual lists.
-    final roomJson = data['rooms'] as List;
-    final weaponJson = data['weapons'] as List;
-    final itemJson = data['items'] as List;
-    final npcJson = data["npcs"] as List;
+    final roomJson = worldData['rooms'] as List;
+    final weaponJson = weapondata['weapons'] as List;
+    final itemJson = worldData['items'] as List;
+    final npcJson = worldData["npcs"] as List;
 
     //change the data to instances of their classes for each individual item.
     List<Room> rooms = roomJson.map((room) => Room.fromJson(room)).toList();
