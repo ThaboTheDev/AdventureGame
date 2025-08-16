@@ -3,10 +3,9 @@ import 'package:adventure_game_version_1/services/commands/command.dart';
 import 'package:adventure_game_version_1/services/utils/print_color_code.dart';
 
 class MoveCommand extends Command {
-
   @override
   bool execute(Player target) {
-    if (target.upadtePosition(name, int.parse(argument))) {
+    if (target.updatePosition(name, int.parse(argument))) {
       print(
         PrintColorCode().colorize(
           "You moved $argument steps $name",

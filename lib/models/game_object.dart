@@ -12,7 +12,7 @@ abstract class GameObject {
 
   String get getName => _name;
   String get getDescription => _description;
-  bool get getIsTakeable => _isTakeable!;
+  bool get getIsTakeable => _isTakeable ?? false;
   Position get position => _position!;
 
   void interact();

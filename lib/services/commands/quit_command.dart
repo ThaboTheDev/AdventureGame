@@ -10,7 +10,7 @@ class QuitCommand extends Command {
     end();
     return true;
   }
-  
+
   QuitCommand(super._name, super._argument);
 
   void end() {
@@ -58,7 +58,7 @@ class QuitCommand extends Command {
       default:
         print(
           PrintColorCode().colorize(
-            "You will not the removed.",
+            "You will not be removed.",
             PrintColorCode.green,
           ),
         );

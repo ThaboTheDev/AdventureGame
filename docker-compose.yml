@@ -1,0 +1,11 @@
+version: "3.8"
+
+services:
+  adventure-game:
+    build: .
+    image: adventure-game:latest
+    container_name: adventure-game
+    stdin_open: true
+    tty: true
+    volumes:
+      - ./assets:/app/assets:ro

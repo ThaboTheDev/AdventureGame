@@ -52,13 +52,21 @@ abstract class NonPlayerCharacters {
           json['canTrade'] ?? false,
           json['isQuestGiver'] ?? true,
         );
-      case 'enemy':
+      case 'boss':
+      case 'basic':
         return Enemies(
           json['name'],
           json['description'],
-          json['isHostile'] ?? true,
-          json['canTrade'] ?? false,
-          json['isQuestGiver'] ?? false,
+          true,
+          false,
+          false,
+          json['behavior'],
+          json['damage'],
+          json['dialogue'],
+          json['hp'],
+          json['type'],
+          json['xp'],
+          json['loot'],
         );
       case 'trickster':
         return Tricksters(

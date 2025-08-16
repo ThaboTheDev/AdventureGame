@@ -16,13 +16,13 @@ void main() {
   });
   group("Move forward", () {
     test("forward 5", () {
-      target.upadtePosition("forward", 5);
+      target.updatePosition("forward", 5);
       expect(target.currentPosition.getX, 0);
       expect(target.currentPosition.getY, 5);
     });
 
     test("fail to move forward", () {
-      target.upadtePosition("forward", 100);
+      target.updatePosition("forward", 100);
       expect(target.currentPosition.getX, 0);
       expect(target.currentPosition.getY, 0);
     });
@@ -30,13 +30,13 @@ void main() {
 
   group("Move back", () {
     test("back 5", () {
-      target.upadtePosition("back", 5);
+      target.updatePosition("back", 5);
       expect(target.currentPosition.getX, 0);
       expect(target.currentPosition.getY, -5);
     });
 
     test("fail to move back", () {
-      target.upadtePosition("back", 100);
+      target.updatePosition("back", 100);
       expect(target.currentPosition.getX, 0);
       expect(target.currentPosition.getY, 0);
     });

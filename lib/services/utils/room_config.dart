@@ -26,12 +26,14 @@ class RoomConfig {
     //Load the world data from a json file.
     final worldData = await loadWorldData();
     final weapondata = await loadWeaponData();
+    final enemyData = await loadEnemiesData();
 
     //change the data into individual lists.
     final roomJson = worldData['rooms'] as List;
     final weaponJson = weapondata['weapons'] as List;
     final itemJson = worldData['items'] as List;
     final npcJson = worldData["npcs"] as List;
+    final enemiesjson = enemyData['enemies'] as List;
 
     //change the data to instances of their classes for each individual item.
     List<Room> rooms = roomJson.map((room) => Room.fromJson(room)).toList();
@@ -43,6 +45,11 @@ class RoomConfig {
         .map((chr) => NonPlayerCharacters.fromJson(chr))
         .toList();
 
+    List<NonPlayerCharacters> enemies = enemiesjson
+        .map((enemy) => NonPlayerCharacters.fromJson(enemy))
+        .toList();
+
+    characters.addAll(enemies);
     // shuffle all the data around.
     rooms.shuffle();
     weapons.shuffle();

@@ -19,7 +19,7 @@ class CommandFactory {
     switch (move) {
       case "clear":
         return ClearCommand(move, value);
-        
+
       case "stats":
         return StatsCommand(move, value);
 
@@ -32,7 +32,8 @@ class CommandFactory {
       case "inventory":
         return InventoryCommand(move, value);
 
-      case "back" || "forward":
+      case "back":
+      case "forward":
         return MoveCommand(move, value);
 
       case "interact":

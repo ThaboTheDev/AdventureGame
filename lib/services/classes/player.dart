@@ -111,7 +111,7 @@ abstract class Player {
     }
   }
 
-  bool upadtePosition(String dir, int steps) {
+  bool updatePosition(String dir, int steps) {
     int x = _direction.dx;
     int y = _direction.dy;
 
