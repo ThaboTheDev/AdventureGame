@@ -5,7 +5,8 @@ import 'package:adventure_game_version_1/services/utils/print_color_code.dart';
 class StatsCommand extends Command {
   @override
   bool execute(Player target) {
-    print(PrintColorCode().colorize("""
+    print(
+      PrintColorCode().colorize("""
 ======= Profile =======
 
 Name: ${target.getName}
@@ -17,7 +18,8 @@ Position: X=${target.currentPosition.getX}, Y=${target.currentPosition.getY}
 Health: ${target.getHealth}
 Attack: ${target.getAttack}
 Defence: ${target.getDefence}
-    """, PrintColorCode.bold));
+    """, PrintColorCode.bold),
+    );
     return true;
   }
 

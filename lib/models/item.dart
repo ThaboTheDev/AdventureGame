@@ -6,12 +6,14 @@ class Item extends GameObject {
 
   @override
   void interact() {
-    print(PrintColorCode().colorize("""
+    print(
+      PrintColorCode().colorize("""
 ====== Item Info ======
 Name: $getName
 Description: $getDescription
 IsTakeable: $getIsTakeable
-""", PrintColorCode.green));
+""", PrintColorCode.green),
+    );
   }
 
   factory Item.fromJson(Map<String, dynamic> json) {

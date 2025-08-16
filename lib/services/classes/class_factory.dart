@@ -24,7 +24,12 @@ Player? getClass(String input, String name) {
       return Healer(name, "Healer", 10, 150, 50);
 
     default:
-      print(PrintColorCode().colorize("Error Message: Invalid class chosen.", PrintColorCode.red));
+      print(
+        PrintColorCode().colorize(
+          "Error Message: Invalid class chosen.",
+          PrintColorCode.red,
+        ),
+      );
   }
   return null;
 }

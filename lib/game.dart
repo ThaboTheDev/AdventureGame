@@ -87,7 +87,7 @@ Please pick a class:
       print(PrintColorCode().colorize("The room is full.", PrintColorCode.red));
       exit(1);
     }
-    
+
     String? playerInput;
 
     ///gives the description of the starting room.

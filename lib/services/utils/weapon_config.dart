@@ -8,8 +8,10 @@ import 'package:adventure_game_version_1/services/position.dart';
 class WeaponConfig {
   ///list of [Weapons].
   final List<Weapon> _weaponJson;
+
   ///max amount of weapons in a room.
   final int _amount;
+
   ///the [room] being populated.
   final Room _currentRoom;
 

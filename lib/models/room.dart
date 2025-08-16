@@ -96,7 +96,6 @@ class Room {
 
     print(PrintColorCode().colorize(_description, PrintColorCode.blue));
 
-    
     print("");
     printMap();
     print("");
@@ -199,8 +198,6 @@ class Room {
       return null;
     }
   }
-
-
 
   ///generates a new [room] from the given world data for each room.
   factory Room.fromJson(Map<String, dynamic> json) {

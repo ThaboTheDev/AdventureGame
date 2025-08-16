@@ -6,8 +6,7 @@ import 'package:adventure_game_version_1/services/utils/print_color_code.dart';
 class Weapon extends GameObject {
   final String _damage;
   final String _type;
-  Weapon(super.name, super.description, this._damage, this._type)
-    : super.b();
+  Weapon(super.name, super.description, this._damage, this._type) : super.b();
 
   @override
   void interact() {

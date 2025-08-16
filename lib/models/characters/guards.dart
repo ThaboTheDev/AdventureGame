@@ -3,7 +3,7 @@ import 'package:adventure_game_version_1/models/characters/non_player_characters
 import 'package:adventure_game_version_1/services/utils/print_color_code.dart';
 
 class Guards extends NonPlayerCharacters {
-   final String _name;
+  final String _name;
   final String _description;
   final bool _isHostile;
   final bool _canTrade;

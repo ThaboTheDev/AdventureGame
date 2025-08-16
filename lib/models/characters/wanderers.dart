@@ -2,8 +2,7 @@
 import 'package:adventure_game_version_1/models/characters/non_player_characters.dart';
 import 'package:adventure_game_version_1/services/utils/print_color_code.dart';
 
-class Wanderers extends NonPlayerCharacters{
-
+class Wanderers extends NonPlayerCharacters {
   final String _name;
   final String _description;
   final bool _isHostile;
