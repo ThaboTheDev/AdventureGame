@@ -6,6 +6,7 @@ import 'package:adventure_game_version_1/services/commands/inventory_command.dar
 import 'package:adventure_game_version_1/services/commands/look_command.dart';
 import 'package:adventure_game_version_1/services/commands/move_command.dart';
 import 'package:adventure_game_version_1/services/commands/quit_command.dart';
+import 'package:adventure_game_version_1/services/commands/scan_command.dart';
 import 'package:adventure_game_version_1/services/commands/stats_command.dart';
 import 'package:adventure_game_version_1/services/commands/take_command.dart';
 import 'package:adventure_game_version_1/services/commands/turn_command.dart';
@@ -28,6 +29,9 @@ class CommandFactory {
 
       case "look":
         return LookCommand(move, value);
+
+      case "scan":
+        return ScanCommand();
 
       case "inventory":
         return InventoryCommand(move, value);

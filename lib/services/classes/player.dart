@@ -5,6 +5,9 @@ import 'package:adventure_game_version_1/services/commands/command.dart';
 import 'package:adventure_game_version_1/services/direction.dart';
 import 'package:adventure_game_version_1/services/position.dart';
 import 'package:adventure_game_version_1/services/utils/print_color_code.dart';
+import 'package:adventure_game_version_1/services/enhanced_room_renderer.dart';
+import 'package:adventure_game_version_1/services/discovery_system.dart';
+import 'package:adventure_game_version_1/services/distance_calculator.dart';
 
 abstract class Player {
   final String _name;
@@ -17,6 +20,8 @@ abstract class Player {
   int _degrees = 0;
   Direction _direction = Direction.north;
   late final List<GameObject> _inventory = [];
+  final EnhancedRoomRenderer _roomRenderer = EnhancedRoomRenderer();
+  final DiscoverySystem _discoverySystem = DiscoverySystem();
 
   Player(this._name, this._class, this._attack, this._health, this._defence);
 
@@ -27,6 +32,7 @@ abstract class Player {
   int get getHealth => _health;
   Position get currentPosition => _currentPosition!;
   Direction get direction => _direction;
+  Room get currentRoom => _currentRoom;
 
   bool handleCommand(Command command) {
     return command.execute(this);
@@ -34,7 +40,7 @@ abstract class Player {
 
   void look() {
     print("");
-    _currentRoom.describeRoom();
+    _roomRenderer.renderRoom(_currentRoom, _currentPosition!);
   }
 
   void setPosition(Position pos) {
@@ -78,9 +84,43 @@ abstract class Player {
     NonPlayerCharacters? chr = _currentRoom.getNpc(objectName);
 
     if (newObject != null) {
-      newObject.interact();
+      // Check if player is close enough to interact
+      if (DistanceCalculator.isInInteractionRange(_currentPosition!, newObject.position)) {
+        // Discover the item on first interaction
+        _discoverySystem.discoverItem(newObject);
+        newObject.interact();
+        print(PrintColorCode().colorize(
+          "You discovered: ${newObject.getName}!",
+          PrintColorCode.cyan,
+        ));
+      } else {
+        int distance = _currentPosition!.distanceTo(newObject.position);
+        String distanceDesc = DistanceCalculator.getDistanceDescription(distance);
+        print(PrintColorCode().colorize(
+          "You need to get closer to interact with that item. It's $distanceDesc.",
+          PrintColorCode.yellow,
+        ));
+      }
     } else if (chr != null) {
-      chr.interact();
+      // Check if player is close enough to interact
+      if (chr.hasPosition && DistanceCalculator.isInInteractionRange(_currentPosition!, chr.position)) {
+        // Discover the NPC on first interaction
+        _discoverySystem.discoverNpc(chr);
+        chr.interact();
+        print(PrintColorCode().colorize(
+          "You met: ${chr.name}!",
+          PrintColorCode.cyan,
+        ));
+      } else if (chr.hasPosition) {
+        int distance = _currentPosition!.distanceTo(chr.position);
+        String distanceDesc = DistanceCalculator.getDistanceDescription(distance);
+        print(PrintColorCode().colorize(
+          "You need to get closer to interact with that character. They are $distanceDesc.",
+          PrintColorCode.yellow,
+        ));
+      } else {
+        chr.interact(); // No position check needed
+      }
     } else {
       print(
         PrintColorCode().colorize(
@@ -136,7 +176,7 @@ abstract class Player {
             PrintColorCode.green,
           ),
         );
-        _currentRoom.describeRoom();
+        _roomRenderer.renderRoom(_currentRoom, _currentPosition!);
       }
       return true;
     }

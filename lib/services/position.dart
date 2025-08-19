@@ -13,6 +13,11 @@ class Position {
     return isInX && isInY;
   }
 
+  /// Calculate Manhattan distance to another position
+  int distanceTo(Position other) {
+    return (_x - other._x).abs() + (_y - other._y).abs();
+  }
+
   @override
   bool operator ==(Object other) {
     if (runtimeType != other.runtimeType) return false;

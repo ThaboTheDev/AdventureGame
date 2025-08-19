@@ -6,6 +6,7 @@ import 'package:adventure_game_version_1/models/characters/spirits.dart';
 import 'package:adventure_game_version_1/models/characters/tricksters.dart';
 import 'package:adventure_game_version_1/models/characters/wanderers.dart';
 import 'package:adventure_game_version_1/services/utils/print_color_code.dart';
+import 'package:adventure_game_version_1/services/position.dart';
 
 abstract class NonPlayerCharacters {
   final String _name;
@@ -13,6 +14,7 @@ abstract class NonPlayerCharacters {
   final bool _isHostile;
   final bool _canTrade;
   final bool _isQuestGiver;
+  Position? _position;
 
   NonPlayerCharacters(
     this._name,
@@ -27,11 +29,20 @@ abstract class NonPlayerCharacters {
   bool get isHostile => _isHostile;
   bool get canTrade => _canTrade;
   bool get isQuestGiver => _isQuestGiver;
+  Position get position => _position!;
+  bool get hasPosition => _position != null;
 
   void interact();
 
+  void setPosition(Position position) {
+    _position = position;
+  }
+
   void printString() {
-    print(PrintColorCode().colorize("Name: $name", PrintColorCode.magenta));
+    String positionInfo = _position != null 
+        ? " at X=${_position!.getX}, Y=${_position!.getY}"
+        : "";
+    print(PrintColorCode().colorize("Name: $name$positionInfo", PrintColorCode.magenta));
   }
 
   factory NonPlayerCharacters.fromJson(Map<String, dynamic> json) {

@@ -33,6 +33,11 @@ class Room {
 
   Position get topLeft => _topLeft;
   Position get bottomRight => _bottomRight;
+  String get name => _name;
+  String get description => _description;
+  List<GameObject> get objects => List.unmodifiable(_objects);
+  List<NonPlayerCharacters> get characters => List.unmodifiable(_characters);
+  Map<Position, Room> get exits => Map.unmodifiable(_exits);
 
   void listNpcs() {
     if (_characters.isNotEmpty) {
@@ -106,6 +111,13 @@ class Room {
 
   ///adds objects to the room.
   void addObject(GameObject obj) {
+    // Assign a random position if the object doesn't have one
+    if (!obj.hasPosition) {
+      Position? emptyPos = emptyPosition();
+      if (emptyPos != null) {
+        obj.setPosition(emptyPos);
+      }
+    }
     _objects.add(obj);
   }
 
@@ -137,6 +149,13 @@ class Room {
   }
 
   void addNpc(NonPlayerCharacters character) {
+    // Assign a random position if the NPC doesn't have one
+    if (!character.hasPosition) {
+      Position? emptyPos = emptyPosition();
+      if (emptyPos != null) {
+        character.setPosition(emptyPos);
+      }
+    }
     _characters.add(character);
   }
 
@@ -176,9 +195,21 @@ class Room {
       for (int y = topLeft.getY; y >= bottomRight.getY; y--) {
         Position checkPosition = Position(x, y);
 
+        // Check if any object is at this position
         for (GameObject obj in _objects) {
-          if (obj.position == checkPosition) {
+          if (obj.hasPosition && obj.position == checkPosition) {
             flag = true;
+            break;
+          }
+        }
+
+        // Check if any NPC is at this position
+        if (!flag) {
+          for (NonPlayerCharacters npc in _characters) {
+            if (npc.hasPosition && npc.position == checkPosition) {
+              flag = true;
+              break;
+            }
           }
         }
 
