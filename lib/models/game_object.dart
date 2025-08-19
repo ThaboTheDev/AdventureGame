@@ -14,6 +14,7 @@ abstract class GameObject {
   String get getDescription => _description;
   bool get getIsTakeable => _isTakeable ?? false;
   Position get position => _position!;
+  bool get hasPosition => _position != null;
 
   void interact();
 

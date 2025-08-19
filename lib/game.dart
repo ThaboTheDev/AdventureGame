@@ -26,6 +26,12 @@ The rules are simple:
     3. You can interact with items using e.g(interact spear of the ancients).
     4. You can see your inventory with the command e.g (inventory).
     5. You can see the room with the command e.g (look).
+    6. You can scan for nearby entities with the command e.g (scan).
+    
+New Features:
+    • Entities are visible from a distance but names are hidden until you interact with them
+    • Get closer to entities to interact - distance matters!
+    • Use 'scan' to see all nearby entities with their distances and directions
     
 Without holding you further, let's start the game and GodSpeed adventurer.
                 """, PrintColorCode.blue),
@@ -91,7 +97,7 @@ Please pick a class:
     String? playerInput;
 
     ///gives the description of the starting room.
-    startRoom.describeRoom();
+    player.look();
 
     ///the main loop of the game that runs until stopped by a command.
     Command command;
